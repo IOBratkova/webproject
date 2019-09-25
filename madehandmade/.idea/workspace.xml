@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0dc81976-0d53-4ebf-915e-ccd63df0467d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/authorization.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/directweave.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dreamcatchers.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obliqueweave.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/app.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -60,6 +63,7 @@
       <updated>1569083480327</updated>
       <workItem from="1569083483529" duration="81000" />
       <workItem from="1569083652599" duration="2474000" />
+      <workItem from="1569433577384" duration="534000" />
     </task>
     <servers />
   </component>
@@ -71,7 +75,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
