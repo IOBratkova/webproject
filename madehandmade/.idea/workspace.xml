@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0dc81976-0d53-4ebf-915e-ccd63df0467d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/authorization.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/directweave.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dreamcatchers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obliqueweave.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -63,7 +59,9 @@
       <updated>1569083480327</updated>
       <workItem from="1569083483529" duration="81000" />
       <workItem from="1569083652599" duration="2474000" />
-      <workItem from="1569433577384" duration="534000" />
+      <workItem from="1569433577384" duration="877000" />
+      <workItem from="1569589091627" duration="2157000" />
+      <workItem from="1569593105852" duration="3029000" />
     </task>
     <servers />
   </component>
