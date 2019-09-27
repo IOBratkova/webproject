@@ -1,3 +1,19 @@
 .header-h1 {
     text-align: center;
 }
+
+.jumbotron-left-green {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: aquamarine;
+    border-radius: .3rem;
+    margin-right: 20%;
+}
+
+.jumbotron-right-orange {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: coral;
+    border-radius: .3rem;
+    margin-left: 20%;
+}
