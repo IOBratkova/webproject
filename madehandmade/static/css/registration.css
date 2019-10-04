@@ -1,0 +1,30 @@
+.row.row-margin{
+    margin-top: 50%;
+}
+
+.border-primary{
+    border-color: #87CEFA !important;
+}
+
+.registration-img{
+    margin-top: -5%;
+    margin-left: 5%;
+    width: 34%;
+    height: 34%;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #87CEFA;
+    border-color: #87CEFA;
+}
+
+.registration-text{
+    text-align: center;
+    font-family:"Century Schoolbook L";
+}
+
+label{
+    text-align: center;
+    font-family:"Century Schoolbook L";
+}
