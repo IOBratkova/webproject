@@ -14,7 +14,7 @@
     <img src="static/ls4.png" align="left" class="registration-img">
     <div class="container">
         <div class="row registration-row justify-content-center align-items-center h-100" >
-            <form class="border border-primary  shadow-lg rounded p-3 col-md-8">
+            <form class="border border-primary  shadow-lg rounded p-3 col-md-8" enctype="multipart/form-data">
 
                <div align="center" style="margin-bottom: 1rem">
                    <span style="font-family:Lobster, cursive; Font-size:30px;" >Регистрация </span>
@@ -30,7 +30,7 @@
                     </svg>
                     </span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Логин" aria-label="Логин" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Логин" aria-label="Логин" aria-describedby="basic-addon2" pattern="[a-zA-Z]+" required>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                         </svg>
                     </span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                         </svg>
                     </span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Имя" aria-label="FirstName" aria-describedby="basic-addon4">
+                            <input type="text" class="form-control" placeholder="Имя" aria-label="FirstName" aria-describedby="basic-addon4" required>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                         </svg>
                     </span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Фамилия" aria-label="LastName" aria-describedby="basic-addon3">
+                            <input type="text" class="form-control" placeholder="Фамилия" aria-label="LastName" aria-describedby="basic-addon3" required>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                         </svg>
                     </span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Пароль" aria-label="Password" aria-describedby="basic-addon5">
+                            <input type="password" class="form-control" placeholder="Пароль" aria-label="Password" aria-describedby="basic-addon5" required>
                         </div>
                     </div>
                 </div>
@@ -108,14 +108,14 @@
                                 </svg>
                             </span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Подвтвердите пароль" aria-label="PPassword" aria-describedby="basic-addon6">
+                            <input type="password" class="form-control" placeholder="Подвтвердите пароль" aria-label="PPassword" aria-describedby="basic-addon6" required>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <button type="button" class="btn btn-primary btn-lg btn-block">Зарегистрироваться</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Зарегистрироваться</button>
                     </div>
                 </div>
             </form>
