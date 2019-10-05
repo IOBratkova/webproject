@@ -2,14 +2,3 @@
     text-align: center;
 }
 
-.jumbotron-left{
-    padding: 1rem;
-    padding-left: 15%;
-    position: relative;
-    left: -15%;
-}
-
-.jumbotron-right {
-    position: relative;
-    right: -15%;
-}

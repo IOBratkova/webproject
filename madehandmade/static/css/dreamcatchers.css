@@ -1,0 +1,41 @@
+.dc-img{
+    margin-top: -4%;
+    margin-left: 5%;
+    width: 5%;
+    height: 5%;
+}
+
+.jumbotron-left{
+   /* padding: 1rem 1rem 1rem 15%;*/
+    position: relative;
+    /*left: -15%;*/
+}
+
+.jumbotron-right {
+    position: relative;
+  /*  right: -15%; */
+}
+
+.jumbotron-position {
+    position: relative;
+}
+
+.row.row-content-right{
+    justify-content: right;
+}
+
+.row.row-content-left{
+    justify-content: left;
+}
+
+.row.row-content-center{
+    justify-content: center;
+}
+
+.img-center{
+    transform: rotate(90deg);
+    size: 30%;
+}
+
+
+
