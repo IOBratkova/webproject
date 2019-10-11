@@ -9,6 +9,8 @@
 
      <link rel ="stylesheet" href="static/css/carousel.css">
 
+     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
      <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -38,28 +40,30 @@
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto mr-10">
                         <li class="nav-item dropdown mr-md-4">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSecond" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Вход
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                                <div class="form-group">
+                            <div class="dropdown-menu" style="margin-left: -75px"
+                                 aria-labelledby="navbarDropdown" >
+                                <div class="form-group m-2">
                                     <input autofocus="" name="login" type="text" class="form-control" placeholder="Имя пользователя">
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group m-2">
                                     <input name="password" type="password" class="form-control" placeholder="Пароль">
                                 </div>
 
-                                <div class="form-check">
+                                <div class="form-check m-2">
                                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                     <label class="form-check-label" for="defaultCheck1">
                                         Запомнить
                                     </label>
                                 </div>
-
+                                <div class="form-group m-2">
                                     <button class="btn btn-outline-info btn-sm btn-block" type="submit">Войти</button>
+                                </div>
                             </div>
                         </li>
                         <li class="nav-item mr-md-2">
