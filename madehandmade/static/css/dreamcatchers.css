@@ -1,8 +1,12 @@
-.dc-img{
-    margin-top: -4%;
-    margin-left: 5%;
-    width: 5%;
-    height: 5%;
+.img-logo{
+    width: 155px;
+    position: absolute;
+}
+
+@media (max-width: 80rem) {
+    .img-logo {
+        display: none;
+    }
 }
 
 .jumbotron-left{
