@@ -2,103 +2,91 @@
 
 namespace app\models;
 
-class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
+use Yii;
+
+/**
+ * This is the model class for table "users".
+ *
+ * @property int $id
+ * @property string $name Имя
+ * @property string $lastName Фамилия
+ * @property string $login Логин
+ * @property string $email Email
+ * @property string $password Пароль
+ * @property string $authKey Ключ авторизации
+ * @property string $createAt Дата создания
+ * @property string $accessToken Токен
+ * @property string|null $updateAt Дата изменения
+ * @property string $role Роль пользователя
+ *
+ * @property Photolesson[] $photolessons
+ * @property Scheme[] $schemes
+ * @property Videolesson[] $videolessons
+ */
+class User extends BaseModel
 {
-    public $id;
-    public $username;
-    public $password;
-    public $authKey;
-    public $accessToken;
-
-    private static $users = [
-        '100' => [
-            'id' => '100',
-            'username' => 'admin',
-            'password' => 'admin',
-            'authKey' => 'test100key',
-            'accessToken' => '100-token',
-        ],
-        '101' => [
-            'id' => '101',
-            'username' => 'demo',
-            'password' => 'demo',
-            'authKey' => 'test101key',
-            'accessToken' => '101-token',
-        ],
-    ];
-
-
     /**
      * {@inheritdoc}
      */
-    public static function findIdentity($id)
+    public static function tableName()
     {
-        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
+        return 'users';
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function findIdentityByAccessToken($token, $type = null)
+    public function rules()
     {
-        foreach (self::$users as $user) {
-            if ($user['accessToken'] === $token) {
-                return new static($user);
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Finds user by username
-     *
-     * @param string $username
-     * @return static|null
-     */
-    public static function findByUsername($username)
-    {
-        foreach (self::$users as $user) {
-            if (strcasecmp($user['username'], $username) === 0) {
-                return new static($user);
-            }
-        }
-
-        return null;
+        return [
+            [['name', 'lastName', 'login', 'email', 'password', 'authKey', 'createAt', 'accessToken', 'role'], 'required'],
+            [['createAt', 'updateAt'], 'safe'],
+            [['name', 'lastName', 'login', 'email', 'password', 'authKey', 'role'], 'string', 'max' => 128],
+            [['accessToken'], 'string', 'max' => 255],
+        ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getId()
+    public function attributeLabels()
     {
-        return $this->id;
+        return [
+            'id' => 'ID',
+            'name' => 'Имя',
+            'lastName' => 'Фамилия',
+            'login' => 'Логин',
+            'email' => 'Email',
+            'password' => 'Пароль',
+            'authKey' => 'Ключ авторизации',
+            'createAt' => 'Дата создания',
+            'accessToken' => 'Токен',
+            'updateAt' => 'Дата изменения',
+            'role' => 'Роль пользователя',
+        ];
     }
 
     /**
-     * {@inheritdoc}
+     * @return \yii\db\ActiveQuery
      */
-    public function getAuthKey()
+    public function getPhotolessons()
     {
-        return $this->authKey;
+        return $this->hasMany(Photolesson::className(), ['userID' => 'id']);
     }
 
     /**
-     * {@inheritdoc}
+     * @return \yii\db\ActiveQuery
      */
-    public function validateAuthKey($authKey)
+    public function getSchemes()
     {
-        return $this->authKey === $authKey;
+        return $this->hasMany(Scheme::className(), ['userID' => 'id']);
     }
 
     /**
-     * Validates password
-     *
-     * @param string $password password to validate
-     * @return bool if password provided is valid for current user
+     * @return \yii\db\ActiveQuery
      */
-    public function validatePassword($password)
+    public function getVideolessons()
     {
-        return $this->password === $password;
+        return $this->hasMany(Videolesson::className(), ['userID' => 'id']);
     }
 }
