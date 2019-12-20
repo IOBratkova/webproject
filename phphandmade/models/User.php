@@ -40,10 +40,9 @@ class User extends BaseModel implements IdentityInterface
     public function rules()
     {
         return [
-            [['name', 'lastName', 'login', 'email', 'password', 'authKey', 'createAt', 'accessToken', 'role'], 'required'],
+            [['name', 'lastName', 'login', 'email', 'password', 'role'], 'required'],
             [['createAt', 'updateAt'], 'safe'],
-            [['name', 'lastName', 'login', 'email', 'password', 'authKey', 'role'], 'string', 'max' => 128],
-            [['accessToken'], 'string', 'max' => 255],
+            [['name', 'lastName', 'login', 'email', 'password', 'role', 'authKey'], 'string', 'max' => 128],
         ];
     }
 
