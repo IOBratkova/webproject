@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\web\IdentityInterface;
 
 /**
  * This is the model class for table "users".
@@ -23,7 +24,7 @@ use Yii;
  * @property Scheme[] $schemes
  * @property Videolesson[] $videolessons
  */
-class User extends BaseModel
+class User extends BaseModel implements IdentityInterface
 {
     /**
      * {@inheritdoc}
@@ -88,5 +89,78 @@ class User extends BaseModel
     public function getVideolessons()
     {
         return $this->hasMany(Videolesson::className(), ['userID' => 'id']);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function findIdentity($id)
+    {
+        return static::findOne($id);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        return static::findOne(['accessToken' => $token]);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getAuthKey()
+    {
+        return $this->authKey;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function validateAuthKey($authKey)
+    {
+        return $this->authKey === $authKey;
+    }
+
+    /**
+     * @param $password
+     * @return bool
+     */
+    public function validatePassword($password)
+    {
+        return Yii::$app->security->validatePassword($password, $this->password);
+    }
+
+    public static function findByEmail($email)
+    {
+        return static::findOne(['email' => $email]);
+    }
+
+    public static function findByLogin($login)
+    {
+        return static::findOne(['login' => $login]);
+    }
+
+    public function beforeSave($insert)
+    {
+        if(!parent::beforeSave($insert))
+            return false;
+
+        if($insert) {
+            $this->password = Yii::$app->security->generatePasswordHash($this->password);
+            $this->accessToken = Yii::$app->security->generateRandomString();
+            $this->authKey = Yii::$app->security->generateRandomString();
+        }
+
+        return true;
     }
 }
