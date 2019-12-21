@@ -17,7 +17,7 @@ class BaseModel extends ActiveRecord
                 'class' => TimestampBehavior::className(),
                 'createdAtAttribute' => 'createAt',
                 'updatedAtAttribute' => 'updateAt',
-                'value' => new Expression('now()')
+                'value' => date('Y-m-d H:i:s')
             ]
         ];
     }
