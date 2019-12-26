@@ -131,7 +131,7 @@ export default {
     }
   },
   methods: {
-    signUp () {
+    signUp: function () {
       HTTP.post('/user/signup', {
         name: this.name,
         lastName: this.lastName,
@@ -141,6 +141,7 @@ export default {
         role: 'user'
       }).then((response) => {
         localStorage.setItem('user', JSON.stringify(response.data))
+        this.$router.push('/')
       }, (error) => {
         this.result = error.response.data.password
       })
