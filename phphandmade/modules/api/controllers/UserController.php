@@ -2,19 +2,26 @@
 
 namespace app\modules\api\controllers;
 
-class UserController extends BaseActiveController
+use app\models\User;
+use Yii;
+
+class UserController extends BaseController
 {
     public $modelClass = "app\models\User";
 
-    /*public function verbs()
+    public function verbs()
     {
         return [
-            'signUp' => ['POST', 'OPTIONS']
+            'signup' => ['POST', 'OPTIONS']
         ];
     }
 
-    public function actionSignUp()
+    public function actionSignup()
     {
-        return ['status' => 'success'];
-    }*/
+        $model = new User();
+
+        if ($model->load(Yii::$app->request->getBodyParams(), '') && $model->save()) {
+            return $model;
+        }
+    }
 }
