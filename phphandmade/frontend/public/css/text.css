@@ -1,0 +1,67 @@
+.text-radiance-red{
+    text-shadow: red 0 0 5px;
+}
+
+.text-radiance-red-light{
+    text-shadow: red 0 0 20px;
+    color: darkred;
+}
+
+.text-radiance-orange{
+    text-shadow: lightsalmon 0 0 5px;
+}
+
+.text-radiance-orange-light{
+    text-shadow: lightsalmon 0 0 20px;
+    color: darkorange;
+}
+
+.text-radiance-yellow{
+    text-shadow: yellow 0 0 5px;
+}
+
+.text-radiance-yellow-light{
+    text-shadow: yellow 0 0 20px;
+    color: yellowgreen;
+}
+
+.text-radiance-lime{
+    text-shadow: lime 0 0 5px;
+}
+
+.text-radiance-lime-light{
+    text-shadow: lime 0 0 20px;
+    color: darkgreen;
+}
+
+.text-radiance-blue{
+    text-shadow: deepskyblue 0 0 5px;
+}
+
+.text-radiance-blue-light{
+    text-shadow: deepskyblue 0 0 20px;
+    color: blue;
+}
+
+.text-radiance-violet{
+    text-shadow: blueviolet 0 0 5px;
+}
+
+.text-radiance-violet-light{
+    text-shadow: blueviolet 0 0 20px;
+    color: violet;
+}
+
+.text-radiance-pink{
+    text-shadow: hotpink 0 0 5px;
+}
+
+.text-radiance-pink-ligth{
+    text-shadow: hotpink 0 0 20px;
+    color: deeppink;
+}
+
+.text-signup{
+    font-family:Lobster, cursive;
+    Font-size:30px;
+}
