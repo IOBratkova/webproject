@@ -53,7 +53,7 @@
                   </div>
                 </li>
                 <li class="nav-item mr-md-2">
-                  <a class="nav-link" href="views/SignUp.vue">Регистрация</a>
+                  <router-link class="nav-link" to="/signup">Регистрация</router-link>
                 </li>
               </ul>
             </form>
