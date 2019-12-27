@@ -33,24 +33,7 @@
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSecond" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Вход
                   </a>
-                  <div class="dropdown-menu" style="margin-left: -75px"
-                       aria-labelledby="navbarDropdown" >
-                    <div class="form-group m-2">
-                      <label>
-                        <input autofocus="" name="login" type="text" class="form-control" placeholder="Имя пользователя">
-                      </label>
-                    </div>
-
-                    <div class="form-group m-2">
-                      <label>
-                        <input name="password" type="password" class="form-control" placeholder="Пароль">
-                      </label>
-                    </div>
-
-                    <div class="form-group m-2">
-                      <button class="btn btn-outline-info btn-sm btn-block" type="submit">Войти</button>
-                    </div>
-                  </div>
+                  <Login/>
                 </li>
                 <li class="nav-item mr-md-2">
                   <router-link class="nav-link" to="/signup">Регистрация</router-link>
@@ -96,8 +79,10 @@
 </template>
 
 <script>
+import Login from './components/Login'
 export default {
   name: 'app',
+  components: { Login },
   computed: {
     showDefaultLayout () {
       return !this.$route.meta.layout
