@@ -4,7 +4,7 @@
 
 .text-radiance-red-light{
     text-shadow: red 0 0 20px;
-    color: darkred;
+    color: white;
 }
 
 .text-radiance-orange{
@@ -13,7 +13,7 @@
 
 .text-radiance-orange-light{
     text-shadow: lightsalmon 0 0 20px;
-    color: darkorange;
+    color: white;
 }
 
 .text-radiance-yellow{
@@ -22,7 +22,7 @@
 
 .text-radiance-yellow-light{
     text-shadow: yellow 0 0 20px;
-    color: yellowgreen;
+    color: white;
 }
 
 .text-radiance-lime{
@@ -31,7 +31,7 @@
 
 .text-radiance-lime-light{
     text-shadow: lime 0 0 20px;
-    color: darkgreen;
+    color: white;
 }
 
 .text-radiance-blue{
@@ -40,7 +40,7 @@
 
 .text-radiance-blue-light{
     text-shadow: deepskyblue 0 0 20px;
-    color: blue;
+    color: white;
 }
 
 .text-radiance-violet{
@@ -49,7 +49,7 @@
 
 .text-radiance-violet-light{
     text-shadow: blueviolet 0 0 20px;
-    color: violet;
+    color: white;
 }
 
 .text-radiance-pink{
@@ -58,7 +58,7 @@
 
 .text-radiance-pink-ligth{
     text-shadow: hotpink 0 0 20px;
-    color: deeppink;
+    color: white;
 }
 
 .text-signup{
