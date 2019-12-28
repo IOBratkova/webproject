@@ -11,7 +11,7 @@
       </div>
 
       <div class="m-1" align="center">
-        <span style="font-family:Lobster, cursive; Font-size:22px;" > Категория: например, ловцы снов</span>
+        <span style="font-family:Lobster, cursive; Font-size:22px;" > Категория: {{type.title}}</span>
       </div>
 
       <div class="row row-content-center mb-3 p-1 jumbotron-position shadow rounded-bookmark border border-pink">
@@ -58,7 +58,10 @@ export default {
     HTTP.get('/photolesson/view?id=' + id)
       .then(response => (this.model = response.data)).then(
         HTTP.get('/user/view?id=' + id)
-          .then(response => (this.user = response.data))
+          .then(response => (this.user = response.data)).then(
+            HTTP.get('/handmadetype/view?id=' + id)
+              .then(response => (this.type = response.data))
+          )
       )
   }
 }
