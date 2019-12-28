@@ -118,6 +118,7 @@ export default {
   methods: {
     signOut () {
       localStorage.removeItem('user')
+      location.reload()
     }
   }
 }
