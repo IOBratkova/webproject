@@ -2,6 +2,7 @@
 
 namespace app\modules\api\controllers;
 
+use app\models\LoginForm;
 use app\models\User;
 use Yii;
 
@@ -12,7 +13,8 @@ class UserController extends BaseController
     public function verbs()
     {
         return [
-            'signup' => ['POST', 'OPTIONS']
+            'signup' => ['POST', 'OPTIONS'],
+            'signin' => ['POST', 'OPTIONS']
         ];
     }
 
@@ -23,5 +25,17 @@ class UserController extends BaseController
         if ($model->load(Yii::$app->request->getBodyParams(), '') && $model->save()) {
             return $model;
         }
+    }
+
+    public function actionSignin()
+    {
+        $model = new LoginForm();
+        $model->load(Yii::$app->request->getBodyParams(), '');
+
+        if($model->login()){
+            return $model->getUser();
+        }
+
+        return $model;
     }
 }
