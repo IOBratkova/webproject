@@ -56,13 +56,19 @@ export default {
   created () {
     var id = this.$route.params.id
     HTTP.get('/photolesson/view?id=' + id)
-      .then(response => (this.model = response.data)).then(
-        HTTP.get('/user/view?id=' + id)
-          .then(response => (this.user = response.data)).then(
-            HTTP.get('/handmadetype/view?id=' + id)
-              .then(response => (this.type = response.data))
-          )
+      .then(response => (this.model = response.data)
+        .then(
+          HTTP.get('/user/view?id=' + this.model.userID)
+            .then(response => (this.user = response.data)
+              .then(
+                HTTP.get('/handmadetype/view?id=' + this.model.handmadeTypeID)
+                  .then(response => (this.type = response.data))
+              )
+            )
+        )
       )
+    // eslint-disable-next-line no-debugger
+    debugger
   }
 }
 </script>
