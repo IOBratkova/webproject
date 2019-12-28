@@ -27,7 +27,7 @@
                 </div>
               </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
+            <form class="form-inline mt-2 mt-md-0" v-if="!isUserAutorized">
               <ul class="navbar-nav mr-auto mr-10">
                 <li class="nav-item dropdown mr-md-4">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSecond" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,6 +40,10 @@
                 </li>
               </ul>
             </form>
+            <div v-else>
+              <label>Привет, {{name}}!</label>
+              <button v-on:click="signOut">Выйти</button>
+            </div>
           </div>
         </nav>
       </header>
@@ -81,6 +85,13 @@
 <script>
 import Login from './components/Login'
 export default {
+  data () {
+    return {
+      name: '',
+      user: null,
+      userString: ''
+    }
+  },
   name: 'app',
   components: { Login },
   computed: {
@@ -89,6 +100,24 @@ export default {
     },
     showSignInLayout () {
       return this.$route.meta.layout === 'signup'
+    },
+    isUserAutorized () {
+      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+      this.userString = localStorage.getItem('user')
+      if (this.userString === null) {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        this.name = ''
+        return false
+      } else {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        this.name = JSON.parse(this.userString, this.user).name
+        return true
+      }
+    }
+  },
+  methods: {
+    signOut () {
+      localStorage.removeItem('user')
     }
   }
 }
