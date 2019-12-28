@@ -18,7 +18,7 @@ use Yii;
  * @property int $handmadeTypeID ID вида рукоделия
  *
  * @property Image[] $images
- * @property Handmadetype $handmadeType
+ * @property HandmadeType $handmadeType
  * @property User $users
  */
 class Photolesson extends BaseModel
@@ -37,12 +37,12 @@ class Photolesson extends BaseModel
     public function rules()
     {
         return [
-            [['title', 'description', 'materials', 'countImages', 'createAt', 'userID', 'handmadeTypeID'], 'required'],
+            [['title', 'description', 'materials', 'userID', 'handmadeTypeID'], 'required'],
             [['materials'], 'string'],
             [['countImages', 'userID', 'handmadeTypeID'], 'integer'],
             [['createAt', 'updateAt'], 'safe'],
             [['title', 'description'], 'string', 'max' => 128],
-            [['handmadeTypeID'], 'exist', 'skipOnError' => true, 'targetClass' => Handmadetype::className(), 'targetAttribute' => ['handmadeTypeID' => 'id']],
+            [['handmadeTypeID'], 'exist', 'skipOnError' => true, 'targetClass' => HandmadeType::className(), 'targetAttribute' => ['handmadeTypeID' => 'id']],
             [['userID'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['userID' => 'id']],
         ];
     }
