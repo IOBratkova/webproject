@@ -4,7 +4,7 @@
 namespace app\modules\api\controllers;
 
 
-class HandmadeTypeController extends BaseActiveController
+class HandmadetypeController extends BaseActiveController
 {
     public $modelClass = "app\models\HandmadeType";
 
