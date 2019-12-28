@@ -60,6 +60,7 @@ export default {
         password: this.password
       }).then((response) => {
         localStorage.setItem('user', JSON.stringify(response.data))
+        location.reload()
       }, (error) => {
         this.result = error.response.data.password
       })
