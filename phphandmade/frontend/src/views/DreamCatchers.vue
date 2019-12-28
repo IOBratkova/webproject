@@ -30,12 +30,12 @@
 
       <div class="row row-content-right mb-5 jumbotron-position shadow rounded-bookmark border border-blue">
         <picture>
-          <img src="static/images/ls.png" height="100" weight="100">
-          <img src="static/images/ls3.png" height="100" weight="100">
-          <img src="static/images/ls4.png" height="100" weight="100">
+          <img src="img/ls.png" height="100" weight="100">
+          <img src="img/ls3.png" height="100" weight="100">
+          <img src="img/ls4.png" height="100" weight="100">
         </picture>
         <div align="center" style="margin-bottom: 1rem; margin-left: 1rem">
-          <span style="font-family:Lobster, cursive; Font-size:50px;" >Видеоуроки</span>
+          <span style="font-family:Lobster, cursive; font-size:50px;" >Видеоуроки</span>
         </div>
       </div>
     </div>
