@@ -1,20 +1,20 @@
 <template>
-  <form class="dropdown-menu" style="margin-left: -75px"
+  <form class="dropdown-menu text-center" style="margin-left: -75px"
        aria-labelledby="navbarDropdown" @submit.prevent="signIn">
-    <div class="form-group m-2">
+    <div class="form-group m-2 text-center">
       <label>
         <input autofocus="" name="username" type="text" class="form-control" placeholder="Имя пользователя" v-model="username">
       </label>
-      <div class="error" v-if="$v.username.$anyError && !$v.username.required">Заполните «Имя пользователя».</div>
-      <div class="error" v-if="$v.username.$anyError && !$v.username.alpha">Имя пользователя должно состоять только из латинских букв.</div>
+      <div class="error text-muted text-center" style="font-size: small" v-if="$v.username.$anyError && !$v.username.required">Заполните «Имя пользователя»</div>
+      <div class="error text-muted text-center"  style="font-size: small" v-if="$v.username.$anyError && !$v.username.alpha">Имя пользователя должно состоять только из латинских букв</div>
     </div>
 
-    <div class="form-group m-2">
+    <div class="form-group m-2 text-center">
       <label>
         <input name="password" type="password" class="form-control" placeholder="Пароль" v-model="password">
       </label>
-      <div class="error" v-if="$v.password.$anyError && !$v.password.required">Заполните «Пароль».</div>
-      <div class="error" v-if="result">{{result}}</div>
+      <div class="error text-muted text-center" style="font-size: small" v-if="$v.password.$anyError && !$v.password.required">Заполните «Пароль»</div>
+      <div class="error text-muted" v-if="result">{{result}}</div>
     </div>
 
     <div class="form-group m-2">
