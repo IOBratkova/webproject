@@ -16,7 +16,8 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'hZFcqj52vtibYP8bpVFxXhxrw4wcuj3f',
             'parsers' =>[
-                'application/json' => 'yii\web\JsonParser'
+                'application/json' => 'yii\web\JsonParser',
+                'multipart/form-data' => 'yii\web\MultipartFormDataParser'
             ]
         ],
         'cache' => [
