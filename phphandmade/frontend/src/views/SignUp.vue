@@ -141,7 +141,7 @@ export default {
         role: 'user'
       }).then((response) => {
         localStorage.setItem('user', JSON.stringify(response.data))
-        this.$router.push('/')
+        location.href = '/'
       }, (error) => {
         this.result = error.response.data.password
       })
