@@ -52,6 +52,12 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'photolessons/<id:\d+>' => 'photolessons/view',
+                'articles' => 'news/index',
+                [
+                    'class' => \yii\rest\UrlRule::class,
+                    'controller' => ['api/news']
+                ],
                 'api/<controller>/<action>' => 'api/<controller>/<action>'
             ],
         ],
