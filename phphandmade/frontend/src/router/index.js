@@ -16,6 +16,11 @@ const routes = [
     component: () => import('../views/DreamCatchers')
   },
   {
+    path: '/photolessons/:id',
+    name: 'photolesson',
+    component: () => import('../views/PhotoLesson.vue')
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
