@@ -36,8 +36,7 @@ class Image extends ActiveRecord
             [['lessonID'], 'required'],
             [['lessonID'], 'integer'],
             [['description', 'path'], 'string', 'max' => 128],
-            [['lessonID'], 'exist', 'skipOnError' => true, 'targetClass' => Photolesson::className(), 'targetAttribute' => ['lessonID' => 'id']],
-            [['image'], 'string']
+            [['lessonID'], 'exist', 'skipOnError' => true, 'targetClass' => Photolesson::className(), 'targetAttribute' => ['lessonID' => 'id']]
         ];
     }
 
@@ -50,8 +49,7 @@ class Image extends ActiveRecord
             'id' => 'ID',
             'description' => 'Краткое описанние',
             'lessonID' => 'ID урока',
-            'path' => 'Путь к изображению',
-            'image' => 'Изображение'
+            'path' => 'Путь к изображению'
         ];
     }
 /*
