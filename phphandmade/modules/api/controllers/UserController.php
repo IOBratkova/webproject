@@ -6,13 +6,18 @@ use app\models\LoginForm;
 use app\models\User;
 use Yii;
 
-class UserController extends BaseController
+class UserController extends BaseActiveController
 {
     public $modelClass = "app\models\User";
 
     public function verbs()
     {
         return [
+            'index' => ['GET', 'HEAD', 'OPTIONS'],
+            'view' => ['GET', 'HEAD', 'OPTIONS'],
+            'create' => ['POST', 'OPTIONS'],
+            'update' => ['PUT', 'PATCH', 'OPTIONS'],
+            'delete' => ['DELETE', 'OPTIONS'],
             'signup' => ['POST', 'OPTIONS'],
             'signin' => ['POST', 'OPTIONS']
         ];
