@@ -40,10 +40,16 @@
                 </li>
               </ul>
             </form>
-            <div v-else>
-              <label>Привет, {{name}}!</label>
-              <button v-on:click="signOut">Выйти</button>
-            </div>
+            <form class="form-inline mt-2 mt-md-0" v-else>
+              <ul class="navbar-nav mr-auto mr-10">
+                <li class="nav-item">
+                  <a class="nav-link"> Привет, {{name}}! </a>
+                </li>
+                <li class="nav-item mr-md-2">
+                  <a class="nav-link" role="button" v-on:click="signOut">Выход</a>
+                </li>
+              </ul>
+            </form>
           </div>
         </nav>
       </header>
