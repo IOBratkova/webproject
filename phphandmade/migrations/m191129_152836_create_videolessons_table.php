@@ -22,7 +22,7 @@ class m191129_152836_create_videolessons_table extends Migration
             'link' => $this->string(255)->notNull()->comment('Ссылка на видео'),
             'userID' => $this->integer()->notNull()->comment('ID пользователя'),
             'handmadeTypeID' => $this->integer()->notNull()->comment('ID вида рукоделия')
-        ]);
+        ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB');
 
         $this->createIndex(
             'iduser',

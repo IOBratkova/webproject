@@ -25,7 +25,7 @@ class m191129_143228_create_users_table extends Migration
             'updateAt' => $this->dateTime()->comment('Дата изменения'),
             'role' => $this->string(128)->notNull()->comment('Роль пользователя')
 
-        ]);
+        ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB');
     }
 
     /**

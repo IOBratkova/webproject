@@ -21,7 +21,7 @@ class m191129_152348_create_schemes_table extends Migration
             'updateAt' => $this->dateTime()->comment('Дата изменения'),
             'userID' => $this->integer()->notNull()->comment('ID пользователя'),
             'handmadeTypeID' => $this->integer()->notNull()->comment('ID вида рукоделия')
-        ]);
+        ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB');
 
         $this->createIndex(
             'iduser',
