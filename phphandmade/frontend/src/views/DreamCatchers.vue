@@ -22,10 +22,11 @@
           <span class="text-center" style="font-family:Lobster, cursive; font-size:50px;" >Фотоуроки</span>
         </div>
        <div class="row">
-         <div v-for="photolesson in photolessons" v-bind:key="photolesson.id" class="col-sm-2">
+         <div v-for="photolesson in photolessons" v-bind:key="photolesson.id" class="col-lg-2">
            <router-link :to="{name: 'photolesson', params:{id: photolesson.id}}" class="card border border-blue">
              <img :src="photolesson.images[0].path" height="150" weight="150" class="card-img-top" alt="...">
            </router-link>
+           <p></p>
          </div>
        </div>
       </div>
