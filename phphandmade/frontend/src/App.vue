@@ -29,7 +29,7 @@
             </ul>
             <form class="form-inline mt-2 mt-md-0" v-if="!isUserAutorized">
               <ul class="navbar-nav mr-auto mr-10">
-                <li class="nav-item dropdown mr-md-4">
+                <li class="nav-item dropdown mr-md-5">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSecond" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Вход
                   </a>
