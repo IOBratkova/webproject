@@ -6,8 +6,20 @@
     border-color: lightseagreen !important;
 }
 
+.border-violet{
+    border-color: blueviolet !important;
+}
+
+.border-lightsalmon{
+    border-color: lightsalmon !important;
+}
+
 .border-yellow{
     border-color: gold !important;
+}
+
+.border-olive{
+    border-color: olive !important;
 }
 
 .border-blue{
