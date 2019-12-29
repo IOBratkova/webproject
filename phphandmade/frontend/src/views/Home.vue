@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mb-0 mb-sm-0 mb-lg-0 mb-md-0" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="img/index-carousel-flowers-bottle.jpg" class="d-block w-100" alt="...">
@@ -42,7 +42,7 @@
         <span class="sr-only">Вперед</span>
       </a>
     </div>
-    <div class="container w-75 shadow rounded p-3 border border-coral">
+    <div class="container w-75 shadow rounded p-3 border border-coral mt-1 mb-5 mt-sm-1 mb-sm-5 ">
       <h1 style="font-family:Lobster;" class="text-center text-radiance-violet">Последние уроки</h1>
       <div class="row">
         <router-link :to="{name: 'photolesson', params:{id: lessons[0].id}}" class="col-lg-3">
