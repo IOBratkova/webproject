@@ -22,35 +22,10 @@
           <span class="text-center" style="font-family:Lobster, cursive; font-size:50px;" >Фотоуроки</span>
         </div>
        <div class="row">
-         <div class="col-sm-2">
-           <div class="card border border-blue">
-             <img src="img/ls3.png" height="150" weight="150" class="card-img-top" alt="...">
-           </div>
-         </div>
-         <div class="col-sm-2">
-           <div class="card border border-olive">
-             <img src="img/ls.png" height="150" weight="150" class="card-img-top" alt="...">
-           </div>
-         </div>
-         <div class="col-sm-2">
-           <div class="card border border-violet">
-             <img src="img/ls2.png" height="150" weight="150" class="card-img-top" alt="...">
-           </div>
-         </div>
-         <div class="col-sm-2">
-           <div class="card border border-coral">
-             <img src="img/ls4.png" height="150" weight="150" class="card-img-top" alt="...">
-           </div>
-         </div>
-         <div class="col-sm-2">
-           <div class="card border border-yellow">
-             <img src="img/ls5.png" height="150" weight="150" class="card-img-top" alt="...">
-           </div>
-         </div>
-         <div class="col-sm-2">
-           <div class="card border border-pink">
-             <img src="img/lovec-snov.png" height="150" weight="150" class="card-img-top" alt="...">
-           </div>
+         <div v-for="photolesson in photolessons" v-bind:key="photolesson.id" class="col-sm-2">
+           <router-link :to="{name: 'photolesson', params:{id: photolesson.id}}" class="card border border-blue">
+             <img :src="photolesson.images[0].path" height="150" weight="150" class="card-img-top" alt="...">
+           </router-link>
          </div>
        </div>
       </div>
@@ -70,8 +45,20 @@
 </template>
 
 <script>
+import { HTTP } from '../components/http'
+
 export default {
-  name: 'DreamCatchers'
+  name: 'DreamCatchers',
+  data () {
+    return {
+      photolessons: { }
+    }
+  },
+  created () {
+    const countPhotolessons = 6
+    HTTP.get('/photolesson/getlast?count=' + countPhotolessons)
+      .then(response => (this.photolessons = response.data))
+  }
 }
 </script>
 
