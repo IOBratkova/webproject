@@ -3,7 +3,7 @@
     <!-- ls2, -->
     <a href="/"> <img src="img/ls4.png" align="left" class="registration-img"></a>
     <div class="container" @submit.prevent="signUp">
-      <div class="row registration-row justify-content-center align-items-center h-100" >
+      <div class="row registration-row justify-content-center align-items-center h-100 ml-sm-2 mr-sm-2" >
         <form class="border border-pink shadow-lg rounded p-3 col-md-8" enctype="multipart/form-data">
 
           <div align="center" style="margin-bottom: 1rem">

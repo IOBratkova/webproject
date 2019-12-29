@@ -13,6 +13,12 @@
     height: 35%;
 }
 
+@media (max-width: 80rem) {
+    .registration-img {
+        display: none;
+    }
+}
+
 .row.registration-row{
     margin-top: 5%;
     margin-bottom: 3%;
