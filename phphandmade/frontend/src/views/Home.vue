@@ -43,45 +43,63 @@
       </a>
     </div>
     <div class="container w-75 shadow rounded p-3 border border-coral">
-      <h1 style="font-family:Lobster;" class="text-center text-radiance-red">Лучшие уроки</h1>
+      <h1 style="font-family:Lobster;" class="text-center text-radiance-violet">Последние уроки</h1>
       <div class="row">
-        <div class="col-lg-3">
+        <router-link :to="{name: 'photolesson', params:{id: lessons[0].id}}" class="col-lg-3">
           <div class="card border border-blue">
-            <img src="img/dc1.jpg" class="card-img-top" alt="...">
+            <img :src="lessons[0].images[0].path" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title font-weight-bold">Ловец снов</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title font-weight-bold">{{lessons[0].title}}</h5>
+              <p class="card-text">{{lessons[0].description}}</p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-3">
+        </router-link>
+        <router-link :to="{name: 'photolesson', params:{id: lessons[1].id}}" class="col-lg-3">
           <div class="card border border-green">
-            <img src="img/dc1.jpg" class="card-img-top" alt="...">
+            <img :src="lessons[1].images[0].path" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title font-weight-bold">Ловец снов</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title font-weight-bold">{{lessons[1].title}}</h5>
+              <p class="card-text">{{lessons[1].description}}</p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-3">
+        </router-link>
+        <router-link :to="{name: 'photolesson', params:{id: lessons[2].id}}" class="col-lg-3">
           <div class="card border border-yellow">
-            <img src="img/dc1.jpg" class="card-img-top" alt="...">
+            <img :src="lessons[2].images[0].path" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title font-weight-bold">Ловец снов</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title font-weight-bold">{{lessons[2].title}}</h5>
+              <p class="card-text">{{lessons[2].description}}</p>
             </div>
           </div>
-        </div>
-        <div class="col-lg-3">
+        </router-link>
+        <router-link :to="{name: 'photolesson', params:{id: lessons[3].id}}" class="col-lg-3">
           <div class="card border border-pink">
-            <img src="img/dc1.jpg" class="card-img-top" alt="...">
+            <img :src="lessons[3].images[0].path" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title font-weight-bold">Ловец снов</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title font-weight-bold">{{lessons[3].title}}</h5>
+              <p class="card-text">{{lessons[3].description}}</p>
             </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { HTTP } from '../components/http'
+
+export default {
+  name: 'Home',
+  data () {
+    return {
+      lessons: { }
+    }
+  },
+  created () {
+    const countPhotolessons = 4
+    HTTP.get('/photolesson/getlast?count=' + countPhotolessons)
+      .then(response => (this.lessons = response.data))
+  }
+}
+</script>
