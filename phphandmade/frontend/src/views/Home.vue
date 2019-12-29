@@ -46,8 +46,8 @@
       <h1 style="font-family:Lobster;" class="text-center text-radiance-violet">Последние уроки</h1>
       <div class="row">
         <router-link :to="{name: 'photolesson', params:{id: lessons[0].id}}" class="col-lg-3">
-          <div class="card border border-blue">
-            <img :src="lessons[0].images[0].path" class="card-img-top" alt="...">
+          <div class="card border border-blue" style="min-height: 100%">
+            <img :src="lessons[0].images[0].path" height="200" width="200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title font-weight-bold">{{lessons[0].title}}</h5>
               <p class="card-text">{{lessons[0].description}}</p>
@@ -55,8 +55,8 @@
           </div>
         </router-link>
         <router-link :to="{name: 'photolesson', params:{id: lessons[1].id}}" class="col-lg-3">
-          <div class="card border border-green">
-            <img :src="lessons[1].images[0].path" class="card-img-top" alt="...">
+          <div class="card border border-green" style="min-height: 100%">
+            <img :src="lessons[1].images[0].path" height="200" width="200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title font-weight-bold">{{lessons[1].title}}</h5>
               <p class="card-text">{{lessons[1].description}}</p>
@@ -64,8 +64,8 @@
           </div>
         </router-link>
         <router-link :to="{name: 'photolesson', params:{id: lessons[2].id}}" class="col-lg-3">
-          <div class="card border border-yellow">
-            <img :src="lessons[2].images[0].path" class="card-img-top" alt="...">
+          <div class="card border border-yellow" style="min-height: 100%">
+            <img :src="lessons[2].images[0].path" height="200" width="200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title font-weight-bold">{{lessons[2].title}}</h5>
               <p class="card-text">{{lessons[2].description}}</p>
@@ -73,8 +73,8 @@
           </div>
         </router-link>
         <router-link :to="{name: 'photolesson', params:{id: lessons[3].id}}" class="col-lg-3">
-          <div class="card border border-pink">
-            <img :src="lessons[3].images[0].path" class="card-img-top" alt="...">
+          <div class="card border border-pink" style="min-height: 100%">
+            <img :src="lessons[3].images[0].path" height="200" width="200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title font-weight-bold">{{lessons[3].title}}</h5>
               <p class="card-text">{{lessons[3].description}}</p>
