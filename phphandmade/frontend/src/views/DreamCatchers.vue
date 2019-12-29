@@ -17,15 +17,42 @@
         </p>
       </div>
 
-      <div class="row row-content-left mb-5 jumbotron-position shadow rounded-bookmark border border-lime">
+      <div class="row row-content-center mb-5 jumbotron-position shadow rounded-bookmark border border-lime">
         <div align="center" style="margin-bottom: 1rem; margin-right: 1rem">
-          <span style="font-family:Lobster, cursive; font-size:50px;" >Фотоуроки</span>
+          <span class="text-center" style="font-family:Lobster, cursive; font-size:50px;" >Фотоуроки</span>
         </div>
-        <picture>
-          <img src="img/lovec-snov.png" height="100" weight="100">
-          <img src="img/ls5.png" height="100" weight="100">
-          <img src="img/ls2.png" height="100" weight="100">
-        </picture>
+       <div class="row">
+         <div class="col-sm-2">
+           <div class="card border border-blue">
+             <img src="img/ls3.png" height="150" weight="150" class="card-img-top" alt="...">
+           </div>
+         </div>
+         <div class="col-sm-2">
+           <div class="card border border-olive">
+             <img src="img/ls.png" height="150" weight="150" class="card-img-top" alt="...">
+           </div>
+         </div>
+         <div class="col-sm-2">
+           <div class="card border border-violet">
+             <img src="img/ls2.png" height="150" weight="150" class="card-img-top" alt="...">
+           </div>
+         </div>
+         <div class="col-sm-2">
+           <div class="card border border-coral">
+             <img src="img/ls4.png" height="150" weight="150" class="card-img-top" alt="...">
+           </div>
+         </div>
+         <div class="col-sm-2">
+           <div class="card border border-yellow">
+             <img src="img/ls5.png" height="150" weight="150" class="card-img-top" alt="...">
+           </div>
+         </div>
+         <div class="col-sm-2">
+           <div class="card border border-pink">
+             <img src="img/lovec-snov.png" height="150" weight="150" class="card-img-top" alt="...">
+           </div>
+         </div>
+       </div>
       </div>
 
       <div class="row row-content-right mb-5 jumbotron-position shadow rounded-bookmark border border-blue">
