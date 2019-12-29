@@ -16,6 +16,11 @@ const routes = [
     component: () => import('../views/DreamCatchers')
   },
   {
+    path: '/lessonlist',
+    name: 'lessonlist',
+    component: () => import('../views/LessonList')
+  },
+  {
     path: '/photolessons/:id',
     name: 'photolesson',
     component: () => import('../views/PhotoLesson.vue')
