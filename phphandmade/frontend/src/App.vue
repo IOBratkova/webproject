@@ -26,6 +26,9 @@
                   <a class="dropdown-item" href="#">Косое плетение</a>
                 </div>
               </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/lessonlist">Список уроков</router-link>
+              </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0" v-if="!isUserAutorized">
               <ul class="navbar-nav mr-auto mr-10">
