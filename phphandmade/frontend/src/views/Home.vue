@@ -5,31 +5,37 @@
         <div class="carousel-item active">
           <img src="img/index-carousel-flowers-bottle.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block text-center text-radiance-lime-light">
-            <h1 style="font-family:Lobster;">MADEHANDMADE - твой помощник в рукоделии!</h1>
-            <h4>Здесь ты сможешь узнать, что такое фенечки и научиться их делать!</h4>
-            <h4>Если для тебя это не в новинку, то среди схем ты можешь найти</h4>
-            <h4>именно ту, которая нужна тебе!</h4>
-            <p></p>
+           <div class="m-5">
+             <h1 style="font-family:Lobster;">MADEHANDMADE - твой помощник в рукоделии!</h1>
+             <h4>Здесь ты сможешь узнать, что такое фенечки и научиться их делать!</h4>
+             <h4>Если для тебя это не в новинку, то среди схем ты можешь найти</h4>
+             <h4>именно ту, которая нужна тебе!</h4>
+             <p></p>
+           </div>
           </div>
         </div>
         <div class="carousel-item">
           <img src="img/index-carousel-dream-catcher.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block text-center text-radiance-yellow-light">
-            <h1 style="font-family:Lobster;">MADEHANDMADE - твой помощник в рукоделии!</h1>
-            <h4>Увидел где-то ловец снов и очень захотел себе такой?</h4>
-            <h4>Не знаешь, с чего начать, но очень хочешь научиться?</h4>
-            <h4>Раздел "Ловцы снов" поможет тебе, будь ты начинающим или опытным ловцом сновидений!</h4>
-            <p></p>
+            <div class="m-5">
+              <h1 style="font-family:Lobster;">MADEHANDMADE - твой помощник в рукоделии!</h1>
+              <h4>Увидел где-то ловец снов и очень захотел себе такой?</h4>
+              <h4>Не знаешь, с чего начать, но очень хочешь научиться?</h4>
+              <h4>Раздел "Ловцы снов" поможет тебе, будь ты начинающим или опытным ловцом сновидений!</h4>
+              <p></p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
           <img src="img/index-carousel-friendship-brasletes-2.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block text-center text-radiance-red-light">
-            <h1 style="font-family:Lobster;">MADEHANDMADE - твой помощник в рукоделии!</h1>
-            <h4>Красивые узоры на фенечках уже давно не сказка ;) </h4>
-            <h4>"Гейзер", "Шотландка" и большое количество других схем для косого плетения.</h4>
-            <h4>Выбирай схему, подбирай новые цвета и создавай!</h4>
-            <p></p>
+            <div class="m-5">
+              <h1 style="font-family:Lobster;">MADEHANDMADE - твой помощник в рукоделии!</h1>
+              <h4>Красивые узоры на фенечках уже давно не сказка ;) </h4>
+              <h4>"Гейзер", "Шотландка" и большое количество других схем для косого плетения.</h4>
+              <h4>Выбирай схему, подбирай новые цвета и создавай!</h4>
+              <p></p>
+            </div>
           </div>
         </div>
       </div>
