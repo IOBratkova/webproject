@@ -45,7 +45,7 @@
     <div class="container w-75 shadow rounded p-3 border border-coral mt-1 mb-5 mt-sm-1 mb-sm-5 ">
       <h1 style="font-family:Lobster;" class="text-center text-radiance-violet">Последние уроки</h1>
       <div class="row">
-        <router-link :to="{name: 'photolesson', params:{id: lessons[0].id}}" class="col-lg-3">
+        <router-link :to="{name: 'photolesson', params:{id: lessons[0].id}}" class="col-lg-3 p-3">
           <div class="card border border-blue" style="min-height: 100%">
             <img :src="lessons[0].images[0].path" height="200" width="200" class="card-img-top" alt="...">
             <div class="card-body">
@@ -54,7 +54,7 @@
             </div>
           </div>
         </router-link>
-        <router-link :to="{name: 'photolesson', params:{id: lessons[1].id}}" class="col-lg-3">
+        <router-link :to="{name: 'photolesson', params:{id: lessons[1].id}}" class="col-lg-3 p-3">
           <div class="card border border-green" style="min-height: 100%">
             <img :src="lessons[1].images[0].path" height="200" width="200" class="card-img-top" alt="...">
             <div class="card-body">
@@ -63,7 +63,7 @@
             </div>
           </div>
         </router-link>
-        <router-link :to="{name: 'photolesson', params:{id: lessons[2].id}}" class="col-lg-3">
+        <router-link :to="{name: 'photolesson', params:{id: lessons[2].id}}" class="col-lg-3 p-3">
           <div class="card border border-yellow" style="min-height: 100%">
             <img :src="lessons[2].images[0].path" height="200" width="200" class="card-img-top" alt="...">
             <div class="card-body">
@@ -72,7 +72,7 @@
             </div>
           </div>
         </router-link>
-        <router-link :to="{name: 'photolesson', params:{id: lessons[3].id}}" class="col-lg-3">
+        <router-link :to="{name: 'photolesson', params:{id: lessons[3].id}}" class="col-lg-3 p-3">
           <div class="card border border-pink" style="min-height: 100%">
             <img :src="lessons[3].images[0].path" height="200" width="200" class="card-img-top" alt="...">
             <div class="card-body">
