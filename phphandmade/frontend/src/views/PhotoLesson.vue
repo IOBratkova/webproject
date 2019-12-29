@@ -30,7 +30,10 @@
 
       <div class="mt-4" align="center">
         <span class="text-radiance-pink" style="margin-top: 1rem; font-family:Lobster, cursive; font-size:22px;" >Ход работы</span>
-        <ImageLesson/>
+        <ImageLesson v-for='image in model.images'
+                     v-bind:key='image.id'
+                     v-bind:description='image.description'
+                     v-bind:path='image.path'/>
       </div>
     </div>
   </div>

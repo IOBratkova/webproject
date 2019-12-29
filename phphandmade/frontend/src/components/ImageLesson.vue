@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="mt-2">
-      <p>Это текст!!!!</p>
+      <p>{{description}}</p>
     </div>
     <div class="mb-3">
-      <img src="img/dc1.jpg">
+      <img :src="path">
     </div>
   </div>
 </template>
@@ -12,7 +12,8 @@
 <script>
 
 export default {
-  name: 'ImageLesson'
+  name: 'ImageLesson',
+  props: ['description', 'path']
 }
 </script>
 

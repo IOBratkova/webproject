@@ -44,6 +44,7 @@ class Photolesson extends BaseModel
             [['title', 'description'], 'string', 'max' => 128],
             [['handmadeTypeID'], 'exist', 'skipOnError' => true, 'targetClass' => HandmadeType::className(), 'targetAttribute' => ['handmadeTypeID' => 'id']],
             [['userID'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['userID' => 'id']],
+            [['images'], 'string']
         ];
     }
 
@@ -62,6 +63,7 @@ class Photolesson extends BaseModel
             'updateAt' => 'Дата изменения',
             'userID' => 'ID пользователя',
             'handmadeTypeID' => 'ID вида рукоделия',
+            'images' => 'Все картинки урока',
         ];
     }
 
@@ -87,5 +89,23 @@ class Photolesson extends BaseModel
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'userID']);
+    }
+
+    public function toArray(array $fields = [], array $expand = [], $recursive = true)
+    {
+        $data = parent::toArray($fields, $expand, $recursive);
+
+        $images = $this->images;
+
+        foreach ($images as $image)
+        {
+            $image->path = Yii::$app->urlManager->hostInfo . '/' . $image->path;
+        }
+
+        if (count($images) > 0) {
+            $data['images'] = $images;
+        }
+
+        return $data;
     }
 }
