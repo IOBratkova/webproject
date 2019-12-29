@@ -1,5 +1,5 @@
 <template>
-  <form class="dropdown-menu text-center" style="margin-left: -75px"
+  <form class="dropdown-menu text-center"
        aria-labelledby="navbarDropdown" @submit.prevent="signIn">
     <div class="form-group m-2 text-center">
       <label>
