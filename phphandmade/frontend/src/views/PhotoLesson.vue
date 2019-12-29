@@ -2,16 +2,17 @@
   <div>
     <img class="img-fluid img-logo my-n3" src="img/ls4.png">
     <div class="container shadow rounded w-75 my-3 border border-yellow">
-      <div class="mb-2" align="center" style="margin-bottom: 1rem; height: 40px">
-        <span class="text-radiance-lime" style="font-family:Lobster, cursive; font-size:50px;" > {{model.title}}</span>
-      </div>
 
-      <div class="mt-4" align="center">
-        <span style="margin-top: 1rem; font-family:Lobster, cursive; font-size:22px;" > Автор: {{user.login}}</span>
-      </div>
-
-      <div class="m-1" align="center">
-        <span style="font-family:Lobster, cursive; font-size:22px;" > Категория: {{type.title}}</span>
+      <div class="row row-content-center mt-3 mb-3 p-1 jumbotron-position shadow rounded-bookmark border border-olive">
+        <div align="center" style="margin-bottom: 1rem; margin-left: 1rem">
+          <span class="text-radiance-lime" style="font-family:Lobster, cursive; font-size:50px;" > {{model.title}}</span>
+          <div>
+            <span style="margin-top: 1rem; font-family:Lobster, cursive; font-size:22px;" > Автор: {{user.login}}</span>
+          </div>
+          <div>
+            <span style="font-family:Lobster, cursive; font-size:22px;" > Категория: {{type.title}}</span>
+          </div>
+        </div>
       </div>
 
       <div class="row row-content-center mb-3 p-1 jumbotron-position shadow rounded-bookmark border border-pink">
