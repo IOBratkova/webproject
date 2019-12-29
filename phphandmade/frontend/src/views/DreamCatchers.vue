@@ -19,7 +19,7 @@
 
       <div class="row row-content-center mb-5 jumbotron-position shadow rounded-bookmark border border-lime">
         <div align="center" style="margin-bottom: 1rem; margin-right: 1rem">
-          <span class="text-center" style="font-family:Lobster, cursive; font-size:40px;" >Фотоуроки</span>
+          <span class="text-center" style="font-family:Lobster, cursive; font-size: xx-large;" >Фотоуроки</span>
         </div>
        <div class="row">
          <div v-for="photolesson in photolessons" v-bind:key="photolesson.id" class="col-lg-2">
@@ -38,7 +38,7 @@
           <img src="img/ls4.png" height="100" weight="100">
         </picture>
         <div align="center" style="margin-bottom: 1rem; margin-left: 1rem">
-          <span style="font-family:Lobster, cursive; font-size:40px;" >Видеоуроки</span>
+          <span style="font-family:Lobster, cursive; font-size: xx-large;" >Видеоуроки</span>
         </div>
       </div>
     </div>
