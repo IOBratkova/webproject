@@ -11,7 +11,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12 col-sm-4">
+            <div class="form-group col-md-12">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon2">
@@ -26,7 +26,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12 col-sm-4">
+            <div class="form-group col-md-12">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">
