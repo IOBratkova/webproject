@@ -5,6 +5,7 @@
       <div class="row row-content-center mt-3 mb-3 p-1 jumbotron-position shadow rounded-bookmark border border-olive">
         <div class="col-lg-10">
           <form class="form-inline">
+            <v-autocomplete :items="comp" ></v-autocomplete>
             <input class="form-control" style="width: 100%" type="text" placeholder="Поиск">
           </form>
         </div>
@@ -69,7 +70,8 @@ export default {
   data () {
     return {
       lessons1: { },
-      lessons2: { }
+      lessons2: { },
+      comp: ['lol', 'please', 'SJSUKFSUDF']
     }
   },
   created () {
