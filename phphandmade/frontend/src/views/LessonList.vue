@@ -44,17 +44,17 @@
               </router-link>
             </div>
           </div>
-<!--          <div class="row row-content-center" style="width: 100%">-->
-<!--            <div class="col-lg-12 p-3 text-center">-->
-<!--              <ul class="pagination justify-content-center">-->
-<!--                <li class="page-item disabled"><a class="page-link" href="#">Предыдущая</a></li>-->
-<!--                <li class="page-item active"><a class="page-link" href="#">1</a></li>-->
-<!--                <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-<!--                <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--                <li class="page-item"><a class="page-link" href="#">Следующая</a></li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </div>-->
+          <div class="row row-content-center" style="width: 100%">
+            <div class="col-lg-12 p-3 text-center">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Предыдущая</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Следующая</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
