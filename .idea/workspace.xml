@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89ec93ac-77a3-42f7-8da3-283ba782e442" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/phphandmade/frontend/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/phphandmade/frontend/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phphandmade/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/phphandmade/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phphandmade/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/phphandmade/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phphandmade/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/phphandmade/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phphandmade/frontend/src/views/LessonList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/phphandmade/frontend/src/views/LessonList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +149,7 @@
       <workItem from="1577624444015" duration="1384000" />
       <workItem from="1577625915222" duration="2547000" />
       <workItem from="1577628994005" duration="1891000" />
+      <workItem from="1577992023160" duration="3875000" />
     </task>
     <servers />
   </component>
