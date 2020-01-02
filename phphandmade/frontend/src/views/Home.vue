@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade mb-0 mb-sm-0 mb-lg-0 mb-md-0" data-ride="carousel">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade d-none d-md-block mb-0 mb-sm-0 mb-lg-0 mb-md-0" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="img/index-carousel-flowers-bottle.jpg" class="d-block w-100" alt="...">
