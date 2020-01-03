@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <v-app>
+    <div id="app">
+      <div>
     <img class="img-fluid img-logo my-n3" src="img/ls4.png">
     <div class="container shadow rounded w-75 my-3 border border-pink">
       <div class="row row-content-center m-3 p-1 jumbotron-position shadow rounded-bookmark border border-olive">
@@ -60,6 +62,8 @@
       </div>
     </div>
   </div>
+    </div>
+  </v-app>
 </template>
 
 <script>

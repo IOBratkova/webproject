@@ -1,7 +1,6 @@
 <template>
-  <v-app>
+<!--  <v-app>-->
     <div id="app">
-
       <section v-if="showDefaultLayout">
         <header>
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -84,7 +83,6 @@
           </div>
         </footer>
       </section>
-
       <!-- Шаблон для страницы авторизации -->
       <!-- если будешь всё удалять в этом шаблоне, не забудь оставить <router-view> :)-->
       <section v-if="showSignInLayout">
@@ -92,10 +90,8 @@
           <router-view/>
         </main>
       </section>
-
     </div>
-  </v-app>
-
+<!--  </v-app>-->
 </template>
 
 <script>
