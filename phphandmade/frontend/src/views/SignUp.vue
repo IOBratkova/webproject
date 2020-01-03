@@ -114,6 +114,17 @@
           <div class="form-row">
             <div class="form-group col-md-12 mb-0">
               <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                  <label class="custom-file-label" for="inputGroupFile04">Выберите аватарку</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12 mb-0">
+              <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon5">
                         <svg id="i-lock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" width="23" height="23" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
