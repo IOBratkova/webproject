@@ -81,23 +81,23 @@
             </div>
           </div>
 
-          <div class="form-row" v-if="lomaster == true">
+          <div class="form-row" v-if="this.isMaster == 1">
             <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
-              <select class="custom-select" required>
-                <option value="1">Начинающий</option>
-                <option value="2">Опытный</option>
-                <option value="3">Бог рукоделия</option>
+              <select class="custom-select" v-model="note" required>
+                <option value="Начинащзий">Начинающий</option>
+                <option value="Опытный">Опытный</option>
+                <option value="Бог">Бог</option>
               </select>
               <div class="invalid-feedback">Invalid</div>
             </div>
           </div>
-          <div class="form-row" v-if="lomaster == false">
+          <div class="form-row" v-if="this.isMaster == 0">
             <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
-              <select class="custom-select" required>
-                <option value="1">Люблю ловцы снов</option>
-                <option value="2">Люблю фенечки прямым плетением</option>
-                <option value="3">Люблю фенечки косым плетением</option>
-                <option value="3">Обожаю все!</option>
+              <select class="custom-select" v-model="note" required>
+                <option value="Ловцы снов">Люблю ловцы снов</option>
+                <option value="Прямое плетение">Люблю фенечки прямым плетением</option>
+                <option value="Косое плетение">Люблю фенечки косым плетением</option>
+                <option value="Все">Обожаю все!</option>
               </select>
               <div class="invalid-feedback">Invalid</div>
             </div>
@@ -105,7 +105,7 @@
 
           <div class="form-row row-content-center">
             <div class="form-group col-md-12 mb-0 p-1">
-              <textarea class="form-control" placeholder="Расскажите о себе..">
+              <textarea class="form-control" v-model="about" placeholder="Расскажите о себе..">
               </textarea>
             </div>
           </div>
@@ -178,21 +178,18 @@ export default {
       email: '',
       password: '',
       role: '',
-      lomaster: null
-    }
-  },
-  computed: {
-    isMaster (flag) {
-      return flag
+      isMaster: null,
+      note: '',
+      about: ''
     }
   },
   methods: {
     isMaster2: function () {
-      this.lomaster = true
+      this.isMaster = 1
       return true
     },
     isLomaster2: function () {
-      this.lomaster = false
+      this.isMaster = 0
       return false
     },
     signUp: function () {
@@ -202,7 +199,10 @@ export default {
         login: this.login,
         email: this.email,
         password: this.password,
-        role: 'user'
+        role: 'user',
+        isMaster: this.isMaster,
+        note: this.note,
+        about: this.about
       }).then((response) => {
         localStorage.setItem('user', JSON.stringify(response.data))
         location.href = '/'
