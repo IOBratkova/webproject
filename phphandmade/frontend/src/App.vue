@@ -1,6 +1,6 @@
 <template>
 <!--  <v-app>-->
-    <div id="app">
+    <div>
       <section v-if="showDefaultLayout">
         <header>
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
