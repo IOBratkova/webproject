@@ -71,6 +71,21 @@
             </div>
           </div>
 
+          <div class="form-row row-content-center mb-0">
+            <div class="form-group col-md-6 mb-0">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="master" name="customRadio" class="custom-control-input" required v-model="master">
+                <label class="custom-control-label" for="master">Мастер</label>
+              </div>
+            </div>
+            <div class="form-group col-md-6 mb-0">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="radio2" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="radio2">Зритель</label>
+              </div>
+            </div>
+          </div>
+
           <div class="form-row">
             <div class="form-group col-md-12 mb-0">
               <div class="input-group">
