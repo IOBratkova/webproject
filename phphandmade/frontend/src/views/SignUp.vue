@@ -10,8 +10,8 @@
             <span class="text-signup" >Регистрация </span>
           </div>
 
-          <div class="form-row p-0">
-            <div class="form-group col-md-12 mb-0">
+          <div class="form-row">
+            <div class="form-group col-md-12 m-0 p-1">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon2">
@@ -26,7 +26,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12 mb-0">
+            <div class="form-group col-md-12 m-0 p-1">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">
@@ -41,7 +41,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12 mb-0">
+            <div class="form-group col-md-12 mb-0 p-1">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon4">
@@ -53,11 +53,10 @@
                 <input type="text" class="form-control" placeholder="Имя" aria-label="FirstName" aria-describedby="basic-addon4" required v-model="name">
               </div>
             </div>
-
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12 mb-0">
+            <div class="form-group col-md-12 mb-0 p-1">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon3">
@@ -83,7 +82,7 @@
           </div>
 
           <div class="form-row" v-if="lomaster == true">
-            <div class="form-group col-md-12 mb-0" style="height: 100%; width: 100%">
+            <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
               <select class="custom-select" required>
                 <option value="1">Начинающий</option>
                 <option value="2">Опытный</option>
@@ -93,7 +92,7 @@
             </div>
           </div>
           <div class="form-row" v-if="lomaster == false">
-            <div class="form-group col-md-12 mb-0" style="height: 100%; width: 100%">
+            <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
               <select class="custom-select" required>
                 <option value="1">Люблю ловцы снов</option>
                 <option value="2">Люблю фенечки прямым плетением</option>
@@ -105,14 +104,14 @@
           </div>
 
           <div class="form-row row-content-center">
-            <div class="form-group col-md-12 mb-0">
+            <div class="form-group col-md-12 mb-0 p-1">
               <textarea class="form-control" placeholder="Расскажите о себе..">
               </textarea>
             </div>
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12 mb-0">
+            <div class="form-group col-md-12 mb-0 p-1">
               <div class="input-group">
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
@@ -123,7 +122,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12 mb-0">
+            <div class="form-group col-md-12 mb-0 p-1">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon5">
@@ -139,7 +138,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12 mb-0">
+            <div class="form-group col-md-12 mb-0 p-1">
               <div class="input-group">
                 <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon6">
@@ -155,7 +154,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12 mb-0">
+            <div class="form-group col-md-12 mb-0 p-1">
               <button type="submit" class="btn btn-primary btn-lg btn-block">Зарегистрироваться</button>
             </div>
           </div>
