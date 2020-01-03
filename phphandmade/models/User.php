@@ -19,6 +19,10 @@ use yii\web\IdentityInterface;
  * @property string $accessToken Токен
  * @property string|null $updateAt Дата изменения
  * @property string $role Роль пользователя
+ * @property int|null $isMaster
+ * @property string|null $note
+ * @property string|null $about
+ * @property string|null $avatar
  *
  * @property Photolesson[] $photolessons
  * @property Scheme[] $schemes
@@ -40,9 +44,17 @@ class User extends BaseModel implements IdentityInterface
     public function rules()
     {
         return [
-            [['name', 'lastName', 'login', 'email', 'password', 'role'], 'required'],
+            [['name', 'lastName', 'login','email', 'password', 'role'], 'required'],
+
             [['createAt', 'updateAt'], 'safe'],
-            [['name', 'lastName', 'login', 'email', 'password', 'role', 'authKey'], 'string', 'max' => 128],
+
+            [['isMaster'], 'integer'],
+            [['note', 'about'], 'string'],
+
+            [['name', 'lastName', 'login', 'email', 'password', 'role',
+                'authKey', 'avatar'], 'string', 'max' => 128],
+
+            [['accessToken'], 'string', 'max' => 255],
         ];
     }
 
@@ -63,6 +75,10 @@ class User extends BaseModel implements IdentityInterface
             'accessToken' => 'Токен',
             'updateAt' => 'Дата изменения',
             'role' => 'Роль пользователя',
+            'isMaster' => 'Is Master',
+            'note' => 'Note',
+            'about' => 'About',
+            'avatar' => 'Avatar',
         ];
     }
 
