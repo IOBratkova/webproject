@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- ls2, -->
-    <a href="/"> <img src="img/ls4.png" align="left" class="registration-img"></a>
+    <a href="/"> <img src="img/ls4.png" align="left" class="registration-img mt-0"></a>
     <div class="container" @submit.prevent="signUp">
-      <div class="row registration-row justify-content-center align-items-center h-100 ml-sm-2 mr-sm-2" >
+      <div class="row registration-row justify-content-center align-items-center h-100 ml-sm-2 mr-sm-2 mb-0 mb-sm-0" >
         <form class="border border-pink shadow-lg rounded p-3 col-md-8" enctype="multipart/form-data">
 
           <div align="center" style="margin-bottom: 1rem">
@@ -11,7 +11,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 mb-0">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon2">
@@ -26,7 +26,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 mb-0">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">
@@ -41,7 +41,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 mb-0">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon4">
@@ -57,7 +57,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 mb-0">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon3">
@@ -72,7 +72,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 mb-0">
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon5">
@@ -88,7 +88,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 mb-0">
               <div class="input-group">
                 <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon6">
@@ -104,7 +104,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 mb-0">
               <button type="submit" class="btn btn-primary btn-lg btn-block">Зарегистрироваться</button>
             </div>
           </div>
