@@ -10,7 +10,7 @@
             <span class="text-signup" >Регистрация </span>
           </div>
 
-          <div class="form-row">
+          <div class="form-row p-0">
             <div class="form-group col-md-12 mb-0">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -71,18 +71,43 @@
             </div>
           </div>
 
-          <div class="form-row row-content-center mb-0">
-            <div class="form-group col-md-6 mb-0">
-              <div class="custom-control custom-radio">
-                <input type="radio" id="master" name="customRadio" class="custom-control-input" required v-model="master">
-                <label class="custom-control-label" for="master">Мастер</label>
-              </div>
+          <div class="form-row row-content-center m-0 ml-5">
+            <div class="form-check col-md-6 m-6">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" v-on:change="isMaster2">
+              <label class="form-check-label" for="gridRadios1">Мастер</label>
             </div>
-            <div class="form-group col-md-6 mb-0">
-              <div class="custom-control custom-radio">
-                <input type="radio" id="radio2" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="radio2">Зритель</label>
-              </div>
+            <div class="form-check col-md-6 m-6">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" v-on:change="isLomaster2">
+              <label class="form-check-label" for="gridRadios2">Просто посмотреть</label>
+            </div>
+          </div>
+
+          <div class="form-row" v-if="lomaster == true">
+            <div class="form-group col-md-12 mb-0" style="height: 100%; width: 100%">
+              <select class="custom-select" required>
+                <option value="1">Начинающий</option>
+                <option value="2">Опытный</option>
+                <option value="3">Бог рукоделия</option>
+              </select>
+              <div class="invalid-feedback">Invalid</div>
+            </div>
+          </div>
+          <div class="form-row" v-if="lomaster == false">
+            <div class="form-group col-md-12 mb-0" style="height: 100%; width: 100%">
+              <select class="custom-select" required>
+                <option value="1">Люблю ловцы снов</option>
+                <option value="2">Люблю фенечки прямым плетением</option>
+                <option value="3">Люблю фенечки косым плетением</option>
+                <option value="3">Обожаю все!</option>
+              </select>
+              <div class="invalid-feedback">Invalid</div>
+            </div>
+          </div>
+
+          <div class="form-row row-content-center">
+            <div class="form-group col-md-12 mb-0">
+              <textarea class="form-control" placeholder="Расскажите о себе..">
+              </textarea>
             </div>
           </div>
 
@@ -142,10 +167,24 @@ export default {
       login: '',
       email: '',
       password: '',
-      role: ''
+      role: '',
+      lomaster: null
+    }
+  },
+  computed: {
+    isMaster (flag) {
+      return flag
     }
   },
   methods: {
+    isMaster2: function () {
+      this.lomaster = true
+      return true
+    },
+    isLomaster2: function () {
+      this.lomaster = false
+      return false
+    },
     signUp: function () {
       HTTP.post('/user/signup', {
         name: this.name,
