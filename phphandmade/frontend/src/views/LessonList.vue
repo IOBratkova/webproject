@@ -7,13 +7,13 @@
       <div class="row row-content-center m-3 p-1 jumbotron-position shadow rounded-bookmark border border-olive">
         <div class="col-lg-10">
           <form class="form-inline">
-            <v-autocomplete :items="comp" ></v-autocomplete>
+            <v-autocomplete v-model="searchModel" :items="itemsArray" item-text="title" item-value="id" @change="change" @update:search-input="updateItems"></v-autocomplete>
 <!--            <input class="form-control" style="width: 100%" type="text" placeholder="Поиск">-->
           </form>
         </div>
         <div class="col-lg-2">
           <form class="form-inline pt-3">
-            <button class="btn btn-outline-info" style="width: 100%">Найти</button>
+            <button @click="find" class="btn btn-outline-info" style="width: 100%">Найти</button>
           </form>
         </div>
 <!--        <div class="row row-content-center">-->
@@ -68,6 +68,7 @@
 
 <script>
 import { HTTP } from '../components/http'
+import router from '../router'
 
 export default {
   name: 'LessonList',
@@ -75,7 +76,11 @@ export default {
     return {
       lessons1: { },
       lessons2: { },
-      comp: ['lol', 'please', 'SJSUKFSUDF']
+      comp: ['lol', 'please', 'SJSUKFSUDF'],
+      searchModel: {},
+      searchText: '',
+      itemsArray: [],
+      itemValue: {}
     }
   },
   created () {
@@ -85,6 +90,31 @@ export default {
       .then(response => (this.lessons1 = response.data))
     HTTP.get('/photolesson/getlast?count=' + countPhotolessons + '&offset=' + offset)
       .then(response => (this.lessons2 = response.data))
+  },
+  computed: {
+    items () {
+      return this.itemsArray /* .map(entry => {
+        const Description = entry.description
+
+        return Object.assign({}, entry, { Description })
+      }) */
+    }
+  },
+  methods: {
+    updateItems (text) {
+      this.searchText = text
+      const countPhotolessons = 4
+      HTTP.get('/photolesson/getlast?count=' + countPhotolessons)
+        .then(response => (this.itemsArray = response.data))
+    },
+    change () {
+      router.push({ name: 'photolesson', params: { id: this.searchModel } })
+    },
+    find () {
+      // eslint-disable-next-line no-debugger
+      debugger
+      return this.searchText
+    }
   }
 }
 </script>
