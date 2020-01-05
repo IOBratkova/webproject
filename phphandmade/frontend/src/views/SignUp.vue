@@ -128,7 +128,7 @@
 
             <div class="form-row h-25">
               <div class="form-group col-md-12 mb-0 p-1">
-                <v-autocomplete label="Выберите Ваш город. Или город, ближайший к Вам." :items="comp" ></v-autocomplete>
+                <v-autocomplete label="Выберите Ваш город. Или город, ближайший к Вам." :items="getAddresses" :search-input.sync="debouncedUpdateAddresses" ></v-autocomplete>
               </div>
             </div>
 
@@ -179,12 +179,15 @@
 
 <script>
 import { HTTP } from '../components/http'
+import { SUGGESTIONS_HTTP } from '../components/suggestionshttp'
+import _ from 'lodash'
 
 export default {
   name: 'SignUp',
   data () {
     return {
-      comp: ['Город 312', '213 дороГ'],
+      cityString: '',
+      adresses: [],
       name: '',
       lastName: '',
       login: '',
@@ -193,10 +196,36 @@ export default {
       role: '',
       isMaster: null,
       note: '',
-      about: ''
+      about: '',
+      debouncedUpdateAddresses: null
+    }
+  },
+  computed: {
+    getAddresses () {
+      return this.adresses.map(address => {
+        return address.value
+      })
+    }
+  },
+  watch: {
+    debouncedUpdateAddresses (text) {
+      _.debounce(this.updateAddresses(text), 2000)
     }
   },
   methods: {
+    updateAddresses (text) {
+      this.cityString = text
+      const countSuggestions = 10
+      // eslint-disable-next-line no-debugger
+      SUGGESTIONS_HTTP.post('/suggestions/api/4_1/rs/suggest/address', {
+        'query': text,
+        'count': countSuggestions,
+        'from_bound': { 'value': 'city' },
+        'to_bound': { 'value': 'city' }
+      }).then((response) => {
+        (this.adresses = response.data.suggestions)
+      })
+    },
     isMaster2: function () {
       this.isMaster = 1
       return true
