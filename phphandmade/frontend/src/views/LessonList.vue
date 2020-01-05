@@ -7,7 +7,7 @@
       <div class="row row-content-center m-3 p-1 jumbotron-position shadow rounded-bookmark border border-olive">
         <div class="col-lg-10">
           <form class="form-inline">
-            <v-autocomplete v-model="searchModel" :items="itemsArray" item-text="title" item-value="id" @change="change" @update:search-input="updateItems"></v-autocomplete>
+            <v-autocomplete v-model="searchModel" :items="itemsArray" item-text="title" item-value="id" @change="change" :search-input.sync="updateItems"></v-autocomplete>
 <!--            <input class="form-control" style="width: 100%" type="text" placeholder="Поиск">-->
           </form>
         </div>
@@ -80,7 +80,21 @@ export default {
       searchModel: {},
       searchText: '',
       itemsArray: [],
-      itemValue: {}
+      itemValue: {},
+      updateItems: null,
+      pages: [],
+      page: 1,
+      lessonsPerPage: 6
+    }
+  },
+  watch: {
+    updateItems (text) {
+      // eslint-disable-next-line no-debugger
+      debugger
+      this.searchText = text
+      const countPhotolessons = 4
+      HTTP.get('/photolesson/getlast?count=' + countPhotolessons)
+        .then(response => (this.itemsArray = response.data))
     }
   },
   created () {
@@ -101,12 +115,6 @@ export default {
     }
   },
   methods: {
-    updateItems (text) {
-      this.searchText = text
-      const countPhotolessons = 4
-      HTTP.get('/photolesson/getlast?count=' + countPhotolessons)
-        .then(response => (this.itemsArray = response.data))
-    },
     change () {
       router.push({ name: 'photolesson', params: { id: this.searchModel } })
     },
