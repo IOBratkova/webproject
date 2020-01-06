@@ -25,7 +25,7 @@
                     </svg>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Логин" aria-label="Логин" aria-describedby="basic-addon2" pattern="[a-zA-Z]+" v-model="login" required>
+                  <input id="#login" type="text" class="form-control" placeholder="Логин" aria-label="Логин" aria-describedby="basic-addon2" pattern="[a-zA-Z]+" v-model="login" required>
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@
                         </svg>
                     </span>
                   </div>
-                  <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required v-model="email">
+                  <input id="#email" type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required v-model="email">
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@
                         </svg>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Имя" aria-label="FirstName" aria-describedby="basic-addon4" required v-model="name">
+                  <input id="#firstname" type="text" class="form-control" placeholder="Имя" aria-label="FirstName" aria-describedby="basic-addon4" required v-model="name">
                 </div>
               </div>
             </div>
@@ -70,25 +70,25 @@
                         </svg>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Фамилия" aria-label="LastName" aria-describedby="basic-addon3" required v-model="lastName">
+                  <input id="#lastname" type="text" class="form-control" placeholder="Фамилия" aria-label="LastName" aria-describedby="basic-addon3" required v-model="lastName">
                 </div>
               </div>
             </div>
 
             <div class="form-row row-content-center m-0 ml-5">
               <div class="form-check col-md-6 m-6">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" v-on:change="isMaster2">
-                <label class="form-check-label" for="gridRadios1">Мастер</label>
+                <input class="form-check-input" type="radio" name="gridRadios" id="#master" value="option1" v-on:change="isMaster2">
+                <label class="form-check-label" for="#master">Мастер</label>
               </div>
               <div class="form-check col-md-6 m-6">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" v-on:change="isLomaster2">
-                <label class="form-check-label" for="gridRadios2">Просто посмотреть</label>
+                <input class="form-check-input" type="radio" name="gridRadios" id="#see" value="option2" v-on:change="isLomaster2">
+                <label class="form-check-label" for="#see">Просто посмотреть</label>
               </div>
             </div>
 
             <div class="form-row" v-if="this.isMaster == 1">
               <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
-                <select class="custom-select" v-model="note" required>
+                <select is="#select_1" class="custom-select" v-model="note" required>
                   <option value="Начинащзий">Начинающий</option>
                   <option value="Опытный">Опытный</option>
                   <option value="Бог">Бог</option>
@@ -98,7 +98,7 @@
             </div>
             <div class="form-row" v-if="this.isMaster == 0">
               <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
-                <select class="custom-select" v-model="note" required>
+                <select id="#select_2" class="custom-select" v-model="note" required>
                   <option value="Ловцы снов">Люблю ловцы снов</option>
                   <option value="Прямое плетение">Люблю фенечки прямым плетением</option>
                   <option value="Косое плетение">Люблю фенечки косым плетением</option>
@@ -110,7 +110,7 @@
 
             <div class="form-row row-content-center">
               <div class="form-group col-md-12 mb-0 p-1">
-              <textarea class="form-control" v-model="about" placeholder="Расскажите о себе..">
+              <textarea id="#textarea" class="form-control" v-model="about" placeholder="Расскажите о себе..">
               </textarea>
               </div>
             </div>
@@ -119,7 +119,7 @@
               <div class="form-group col-md-12 mb-0 p-1">
                 <div class="input-group">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                    <input id="#avatar" type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
                     <label class="custom-file-label" for="inputGroupFile04">Выберите аватарку</label>
                   </div>
                 </div>
@@ -128,7 +128,7 @@
 
             <div class="form-row h-25">
               <div class="form-group col-md-12 mb-0 p-1">
-                <v-autocomplete label="Выберите Ваш город. Или город, ближайший к Вам." :items="getAddresses" :search-input.sync="debouncedUpdateAddresses" ></v-autocomplete>
+                <v-autocomplete id="#autocomplete" label="Выберите Ваш город. Или город, ближайший к Вам." :items="getAddresses" :search-input.sync="debouncedUpdateAddresses" ></v-autocomplete>
               </div>
             </div>
 
@@ -143,7 +143,7 @@
                         </svg>
                     </span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Пароль" aria-label="Password" aria-describedby="basic-addon5" required v-model="password">
+                  <input id="#password" type="password" class="form-control" placeholder="Пароль" aria-label="Password" aria-describedby="basic-addon5" required v-model="password">
                 </div>
               </div>
             </div>
@@ -159,7 +159,7 @@
                                 </svg>
                             </span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Подтвердите пароль" aria-label="PPassword" aria-describedby="basic-addon6" required>
+                  <input id="#ppassword" type="password" class="form-control" placeholder="Подтвердите пароль" aria-label="PPassword" aria-describedby="basic-addon6" required>
                 </div>
               </div>
             </div>
