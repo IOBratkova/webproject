@@ -119,8 +119,8 @@
               <div class="form-group col-md-12 mb-0 p-1">
                 <div class="input-group">
                   <div class="custom-file">
-                    <input id="#avatar" type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-                    <label class="custom-file-label" for="inputGroupFile04">Выберите аватарку</label>
+                    <input id="#avatar" type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon04">
+                    <label class="custom-file-label" for="#avatar">Выберите аватарку</label>
                   </div>
                 </div>
               </div>
@@ -166,7 +166,7 @@
 
             <div class="form-row">
               <div class="form-group col-md-12 mb-0 p-1">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Зарегистрироваться</button>
+                <button id="#submit" type="submit" class="btn btn-primary btn-lg btn-block">Зарегистрироваться</button>
               </div>
             </div>
           </form>
