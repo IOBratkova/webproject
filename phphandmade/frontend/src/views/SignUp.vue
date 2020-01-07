@@ -86,9 +86,9 @@
               </div>
             </div>
 
-            <div class="form-row" v-if="this.isMaster == 1">
+            <div class="form-row" v-if="this.isMaster === 1">
               <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
-                <select is="#select_1" class="custom-select" v-model="note" required>
+                <select id="#select_1" class="custom-select" v-model="note" required>
                   <option value="Начинащзий">Начинающий</option>
                   <option value="Опытный">Опытный</option>
                   <option value="Бог">Бог</option>
@@ -96,7 +96,7 @@
                 <div class="invalid-feedback">Invalid</div>
               </div>
             </div>
-            <div class="form-row" v-if="this.isMaster == 0">
+            <div class="form-row" v-if="this.isMaster === 0">
               <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
                 <select id="#select_2" class="custom-select" v-model="note" required>
                   <option value="Ловцы снов">Люблю ловцы снов</option>
