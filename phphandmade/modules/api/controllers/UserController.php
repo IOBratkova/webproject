@@ -2,9 +2,11 @@
 
 namespace app\modules\api\controllers;
 
+use app\components\ImageHelper;
 use app\models\LoginForm;
 use app\models\User;
 use Yii;
+use yii\web\UploadedFile;
 
 class UserController extends BaseActiveController
 {
@@ -27,9 +29,25 @@ class UserController extends BaseActiveController
     {
         $model = new User();
 
-        if ($model->load(Yii::$app->request->getBodyParams(), '') && $model->save()) {
+        if ($model->load(Yii::$app->request->getBodyParams(), '')) {
+            $files = UploadedFile::getInstancesByName('image');
+
+            if($files === null){
+                return "огорчение";
+            }
+
+            $filename = ImageHelper::create($files[0]);
+
+            $model->avatar = $filename;
+
+            if(!$model->save()){
+                return 'Ошибка сохранения модели';
+            }
+
+            $files[0]->saveAs($filename);
             return $model;
         }
+        return 'беда';
     }
 
     public function actionSignin()

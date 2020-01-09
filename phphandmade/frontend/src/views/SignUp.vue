@@ -119,7 +119,7 @@
               <div class="form-group col-md-12 mb-0 p-1">
                 <div class="input-group">
                   <div class="custom-file">
-                    <input id="#avatar" type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon04">
+                    <input id="#avatar" type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon04" @change="uploadImage">
                     <label class="custom-file-label" for="#avatar">Выберите аватарку</label>
                   </div>
                 </div>
@@ -178,7 +178,7 @@
 </template>
 
 <script>
-import { HTTP } from '../components/http'
+import { FORMDATA_HTTP } from '../components/formdatahttp'
 import { SUGGESTIONS_HTTP } from '../components/suggestionshttp'
 import _ from 'lodash'
 
@@ -197,7 +197,8 @@ export default {
       isMaster: null,
       note: '',
       about: '',
-      debouncedUpdateAddresses: null
+      debouncedUpdateAddresses: null,
+      image: ''
     }
   },
   computed: {
@@ -234,18 +235,35 @@ export default {
       this.isMaster = 0
       return false
     },
+    uploadImage: function (e) {
+      // eslint-disable-next-line no-debugger
+      debugger
+      e.preventDefault()
+      this.image = e.target.files[0]
+      // eslint-disable-next-line no-unused-vars
+      var imageLength = this.image.length
+    },
     signUp: function () {
-      HTTP.post('/user/signup', {
-        name: this.name,
-        lastName: this.lastName,
-        login: this.login,
-        email: this.email,
-        password: this.password,
-        role: 'user',
-        isMaster: this.isMaster,
-        note: this.note,
-        about: this.about
-      }).then((response) => {
+      let data = new FormData()
+      data.append('name', this.name)
+      data.append('lastName', this.lastName)
+      data.append('login', this.login)
+      data.append('email', this.email)
+      data.append('password', this.password)
+      data.append('role', 'user')
+      if (this.note !== '') {
+        data.append('isMaster', this.isMaster)
+        data.append('note', this.note)
+      }
+      if (this.about !== '') {
+        data.append('about', this.about)
+      }
+      if (this.image !== null) {
+        data.append('image', this.image)
+      }
+      FORMDATA_HTTP.post('/user/signup', data).then((response) => {
+        // eslint-disable-next-line no-debugger
+        debugger
         localStorage.setItem('user', JSON.stringify(response.data))
         location.href = '/'
       }, (error) => {
