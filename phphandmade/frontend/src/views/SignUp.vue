@@ -120,7 +120,7 @@
                 <div class="input-group">
                   <div class="custom-file">
                     <input id="#avatar" type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon04" @change="uploadImage">
-                    <label class="custom-file-label" for="#avatar">Выберите аватарку</label>
+                    <label class="custom-file-label" for="#avatar">{{avatartext}}</label>
                   </div>
                 </div>
               </div>
@@ -198,7 +198,8 @@ export default {
       note: '',
       about: '',
       debouncedUpdateAddresses: null,
-      image: ''
+      image: '',
+      avatartext: 'Выберите аватарку'
     }
   },
   computed: {
@@ -242,6 +243,7 @@ export default {
       this.image = e.target.files[0]
       // eslint-disable-next-line no-unused-vars
       var imageLength = this.image.length
+      this.avatartext = this.image.name
     },
     signUp: function () {
       let data = new FormData()
