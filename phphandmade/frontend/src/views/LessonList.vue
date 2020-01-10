@@ -50,11 +50,11 @@
           <div class="row row-content-center" style="width: 100%">
             <div class="col-lg-12 p-3 text-center">
               <ul class="pagination justify-content-center">
-                <li class="page-item disabled"><a class="page-link" href="#">Предыдущая</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Следующая</a></li>
+                <li class="page-item"><button class="page-link" @click="previousPage">Предыдущая</button></li>
+                <li class="page-item" v-for="(p, index) in pagination.pages" :key=index @click="setPage(p)">
+                  <button class="page-link">{{p}}</button>
+                </li>
+                <li class="page-item"><button class="page-link" @click="nextPage">Следующая</button></li>
               </ul>
             </div>
           </div>
@@ -69,6 +69,7 @@
 <script>
 import { HTTP } from '../components/http'
 import router from '../router'
+import lodash from 'lodash'
 
 export default {
   name: 'LessonList',
@@ -76,21 +77,18 @@ export default {
     return {
       lessons1: { },
       lessons2: { },
-      comp: ['lol', 'please', 'SJSUKFSUDF'],
+      lessons: { },
       searchModel: {},
       searchText: '',
       itemsArray: [],
       itemValue: {},
       updateItems: null,
-      pages: [],
-      page: 1,
-      lessonsPerPage: 6
+      perPage: 8,
+      pagination: {}
     }
   },
   watch: {
     updateItems (text) {
-      // eslint-disable-next-line no-debugger
-      debugger
       this.searchText = text
       const countPhotolessons = 4
       HTTP.get('/photolesson/getlast?count=' + countPhotolessons)
@@ -98,20 +96,12 @@ export default {
     }
   },
   created () {
-    const countPhotolessons = 4
-    const offset = 4
-    HTTP.get('/photolesson/getlast?count=' + countPhotolessons)
-      .then(response => (this.lessons1 = response.data))
-    HTTP.get('/photolesson/getlast?count=' + countPhotolessons + '&offset=' + offset)
-      .then(response => (this.lessons2 = response.data))
+    HTTP.get('/photolesson/getlast')
+      .then(response => { this.lessons = response.data; this.setPage(1) }).then()
   },
   computed: {
     items () {
-      return this.itemsArray /* .map(entry => {
-        const Description = entry.description
-
-        return Object.assign({}, entry, { Description })
-      }) */
+      return this.paginate(this.lessons)
     }
   },
   methods: {
@@ -119,9 +109,42 @@ export default {
       router.push({ name: 'photolesson', params: { id: this.searchModel } })
     },
     find () {
-      // eslint-disable-next-line no-debugger
-      debugger
       return this.searchText
+    },
+    setPage (p) {
+      this.pagination = this.paginator(this.lessons.length, p)
+      this.lessons1 = lodash.chunk(this.items, Math.round(this.perPage / 2))[0]
+      this.lessons2 = lodash.chunk(this.items, Math.round(this.perPage / 2))[1]
+    },
+    paginate (data) {
+      return lodash.slice(data, this.pagination.startIndex, this.pagination.endIndex + 1)
+    },
+    paginator (totalItems, currentPage) {
+      const startIndex = (currentPage - 1) * this.perPage
+      const endIndex = Math.min(startIndex + this.perPage - 1, totalItems - 1)
+      return {
+        currentPage: currentPage,
+        startIndex: startIndex,
+        endIndex: endIndex,
+        totalItems: totalItems,
+        pages: lodash.range(1, Math.ceil(totalItems / this.perPage) + 1)
+      }
+    },
+    isPageFirst: function () {
+      return this.pagination.currentPage === 1
+    },
+    isPageLast: function () {
+      return this.pagination.currentPage === Math.ceil(this.pagination.totalItems / this.perPage)
+    },
+    previousPage () {
+      if (!this.isPageFirst()) {
+        this.setPage(this.pagination.currentPage - 1)
+      }
+    },
+    nextPage () {
+      if (!this.isPageLast()) {
+        this.setPage(this.pagination.currentPage + 1)
+      }
     }
   }
 }
