@@ -2,6 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$testDb =require __DIR__ . '/test_db.php';
 
 $config = [
     'id' => 'basic',
@@ -46,7 +47,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db,
+        'db' => (YII_ENV === 'test' ? $testDb : $db),
 
         'urlManager' => [
             'enablePrettyUrl' => true,
