@@ -25,8 +25,9 @@
           <div class="col-lg-12 text-center">
             <span class="text-center text-radiance-orange" style="font-family:Lobster, cursive; font-size: xx-large;" >Список уроков</span>
           </div>
-          <div class="row m-2" style="width: 100%">
-            <div v-for="lesson1 in lessons1" v-bind:key="lesson1.id" class="col-lg-3 p-3">
+          <div id="my_lessons">
+            <div id="lessons_line_1" class="row m-2" style="width: 100%">
+              <div v-for="lesson1 in lessons1" v-bind:key="lesson1.id" v-bind:id="getId(lesson1.id)" class="mini-unit col-lg-3 p-3">
                 <router-link :to="{name: 'photolesson', params:{id: lesson1.id}}" class="card border border-yellow" style="min-height: 100%">
                   <img :src="lesson1.images[0].path" height="150" width="150" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -34,27 +35,28 @@
                     <p class="card-text">{{lesson1.description}}</p>
                   </div>
                 </router-link>
+              </div>
             </div>
-          </div>
-          <div class="row m-2" style="width: 100%">
-            <div v-for="lesson2 in lessons2" v-bind:key="lesson2.id" class="col-lg-3 p-3">
-              <router-link :to="{name: 'photolesson', params:{id: lesson2.id}}" class="card border border-green" style="min-height: 100%">
-                <img :src="lesson2.images[0].path" height="150" width="150" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title font-weight-bold">{{lesson2.title}}</h5>
-                  <p class="card-text">{{lesson2.title}}</p>
-                </div>
-              </router-link>
+            <div id="lessons_line_2" class="row m-2" style="width: 100%">
+              <div v-for="lesson2 in lessons2" v-bind:key="lesson2.id" v-bind:id="getId(lesson2.id)" class="mini-unit col-lg-3 p-3">
+                <router-link :to="{name: 'photolesson', params:{id: lesson2.id}}" class="card border border-green" style="min-height: 100%">
+                  <img :src="lesson2.images[0].path" height="150" width="150" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title font-weight-bold">{{lesson2.title}}</h5>
+                    <p class="card-text">{{lesson2.title}}</p>
+                  </div>
+                </router-link>
+              </div>
             </div>
           </div>
           <div class="row row-content-center" style="width: 100%">
             <div class="col-lg-12 p-3 text-center">
               <ul class="pagination justify-content-center">
-                <li class="page-item"><button class="page-link" @click="previousPage">Предыдущая</button></li>
-                <li class="page-item" v-for="(p, index) in pagination.pages" :key=index @click="setPage(p)">
+                <li id="previous" class="page-item"><button class="page-link" @click="previousPage">Предыдущая</button></li>
+                <li class="page-item" v-for="(p, index) in pagination.pages" :key=index v-bind:id="index" @click="setPage(p)">
                   <button class="page-link">{{p}}</button>
                 </li>
-                <li class="page-item"><button class="page-link" @click="nextPage">Следующая</button></li>
+                <li id="next" class="page-item"><button class="page-link" @click="nextPage">Следующая</button></li>
               </ul>
             </div>
           </div>
@@ -105,6 +107,9 @@ export default {
     }
   },
   methods: {
+    getId (lessonid) {
+      return lessonid.toString() + 'unit'
+    },
     change () {
       router.push({ name: 'photolesson', params: { id: this.searchModel } })
     },
