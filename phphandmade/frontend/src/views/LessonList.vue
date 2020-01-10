@@ -4,22 +4,22 @@
       <div>
     <img class="img-fluid img-logo my-n3" src="img/ls4.png">
     <div class="container shadow rounded w-75 my-3 border border-pink">
-      <div class="row row-content-center m-3 p-1 jumbotron-position shadow rounded-bookmark border border-olive">
-        <div class="col-lg-10">
-          <form class="form-inline">
-            <v-autocomplete v-model="searchModel" :items="itemsArray" item-text="title" item-value="id" @change="change" :search-input.sync="updateItems"></v-autocomplete>
-<!--            <input class="form-control" style="width: 100%" type="text" placeholder="Поиск">-->
-          </form>
-        </div>
-        <div class="col-lg-2">
-          <form class="form-inline pt-3">
-            <button @click="find" class="btn btn-outline-info" style="width: 100%">Найти</button>
-          </form>
-        </div>
-<!--        <div class="row row-content-center">-->
-<!--          <div class="col-lg-12"> фильтры фильтры всем нужны фильтры</div>-->
+<!--      <div class="row row-content-center m-3 p-1 jumbotron-position shadow rounded-bookmark border border-olive">-->
+<!--        <div class="col-lg-10">-->
+<!--          <form class="form-inline">-->
+<!--            <v-autocomplete v-model="searchModel" :items="itemsArray" item-text="title" item-value="id" @change="change" :search-input.sync="updateItems"></v-autocomplete>-->
+<!--&lt;!&ndash;            <input class="form-control" style="width: 100%" type="text" placeholder="Поиск">&ndash;&gt;-->
+<!--          </form>-->
 <!--        </div>-->
-      </div>
+<!--        <div class="col-lg-2">-->
+<!--          <form class="form-inline pt-3">-->
+<!--            <button @click="find" class="btn btn-outline-info" style="width: 100%">Найти</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        <div class="row row-content-center">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="col-lg-12"> фильтры фильтры всем нужны фильтры</div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      </div>-->
       <div class="row row-content-center m-3 p-1 jumbotron-position shadow rounded-bookmark border border-blue">
         <div class="row row-content-center" style="width: 100%">
           <div class="col-lg-12 text-center">
