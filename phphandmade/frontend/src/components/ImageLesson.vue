@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div class="mt-2">
+  <div id="imagelesson">
+    <div id="#descr" class="mt-2">
       <p>{{description}}</p>
     </div>
-    <div class="mb-3 img-fluid">
+    <div id="#image" class="mb-3 img-fluid">
       <img :src="path">
     </div>
   </div>

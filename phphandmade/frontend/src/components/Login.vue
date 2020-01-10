@@ -3,22 +3,22 @@
        aria-labelledby="navbarDropdown" @submit.prevent="signIn">
     <div class="form-group m-2 text-center">
       <label>
-        <input autofocus="" name="username" type="text" class="form-control" placeholder="Имя пользователя" v-model="username">
+        <input id="#username" autofocus="" name="username" type="text" class="form-control" placeholder="Имя пользователя" v-model="username">
       </label>
-      <div class="error text-muted text-center" style="font-size: small" v-if="$v.username.$anyError && !$v.username.required">Заполните «Имя пользователя»</div>
-      <div class="error text-muted text-center"  style="font-size: small" v-if="$v.username.$anyError && !$v.username.alpha">Имя пользователя должно состоять только из латинских букв</div>
+      <div id="user_error1" class="error text-muted text-center" style="font-size: small" v-if="$v.username.$anyError && !$v.username.required">Заполните «Имя пользователя»</div>
+      <div id="user_error2" class="error text-muted text-center"  style="font-size: small" v-if="$v.username.$anyError && !$v.username.alpha">Имя пользователя должно состоять только из латинских букв</div>
     </div>
 
     <div class="form-group m-2 text-center">
       <label>
-        <input name="password" type="password" class="form-control" placeholder="Пароль" v-model="password">
+        <input id="#password" name="password" type="password" class="form-control" placeholder="Пароль" v-model="password">
       </label>
-      <div class="error text-muted text-center" style="font-size: small" v-if="$v.password.$anyError && !$v.password.required">Заполните «Пароль»</div>
-      <div class="error text-muted" v-if="result">{{result}}</div>
+      <div id="password_error1" class="error text-muted text-center" style="font-size: small" v-if="$v.password.$anyError && !$v.password.required">Проверьте пароль.</div>
+      <div id="password_error2" class="error text-muted" v-if="result">{{result}}</div>
     </div>
 
     <div class="form-group m-2">
-      <button class="btn btn-outline-info btn-sm btn-block" type="submit">Войти</button>
+      <button id="#login_button" class="btn btn-outline-info btn-sm btn-block" type="submit">Войти</button>
     </div>
   </form>
 </template>

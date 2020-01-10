@@ -88,7 +88,7 @@
 
             <div class="form-row" v-if="this.isMaster === 1">
               <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
-                <select id="#select_1" class="custom-select" v-model="note" required>
+                <select id="#select_1" class="custom-select" v-model="note">
                   <option value="Начинащзий">Начинающий</option>
                   <option value="Опытный">Опытный</option>
                   <option value="Бог">Бог</option>
@@ -98,7 +98,7 @@
             </div>
             <div class="form-row" v-if="this.isMaster === 0">
               <div class="form-group col-md-12 mb-0 p-1" style="height: 100%; width: 100%">
-                <select id="#select_2" class="custom-select" v-model="note" required>
+                <select id="#select_2" class="custom-select" v-model="note">
                   <option value="Ловцы снов">Люблю ловцы снов</option>
                   <option value="Прямое плетение">Люблю фенечки прямым плетением</option>
                   <option value="Косое плетение">Люблю фенечки косым плетением</option>
@@ -143,7 +143,7 @@
                         </svg>
                     </span>
                   </div>
-                  <input id="#password" type="password" class="form-control" placeholder="Пароль" aria-label="Password" aria-describedby="basic-addon5" required v-model="password">
+                  <input id="#password" type="password" class="form-control" placeholder="Пароль" aria-label="Password" aria-describedby="basic-addon5" pattern="[a-zA-Z]+" required v-model="password">
                 </div>
               </div>
             </div>
